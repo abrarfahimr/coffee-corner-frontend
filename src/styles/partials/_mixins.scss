@@ -1,0 +1,76 @@
+@use './colors' as *;
+@use './fonts' as *;
+@use './variables' as *;
+
+//media queries mixins
+
+//tabelt 
+@mixin tablet {
+  @media screen and (min-width: $tablet-min-size){
+    @content;
+  }
+}
+
+//desktop
+@mixin desktop {
+  @media screen and (min-width: $desktop-min-size){
+    @content;
+  }
+}
+
+//mobile text styles
+@mixin page-nav-mobile {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  @include tablet(){
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+}
+
+@mixin page-header-mobile {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  @include tablet(){
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+@mixin subheader-mobile {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 600;
+  @include tablet(){
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+@mixin body-mobile {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  @include tablet(){
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+}
+
+@mixin label-mobile {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+  @include tablet(){
+    font-size: 0.875rem;
+    line-height: 1.125rem ;
+    font-weight: 400;
+  }
+}
+
