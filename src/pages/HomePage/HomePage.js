@@ -1,6 +1,7 @@
 import './HomePage.scss';
-import GraphChart from '../../components/BarChart/BarChart';
-import UserChart from '../../components/BarChart/userChart';
+import GraphChart from '../../components/Charts/BarChart';
+import UserChart from '../../components/Charts/userChart';
+import PieChartGraph from '../../components/Charts/PieChart';
 import coffeeImage1 from '../../assets/images/image01.png';
 import coffeeImage2 from '../../assets/images/image02.png';
 import coffeeImage3 from '../../assets/images/image03.png';
@@ -89,8 +90,47 @@ const HomePage = () => {
         <div className="homepage__target">
           <div className="homepage__targetleft">75%</div>
           <div className="homepage__targetright">
-            <p className='homepage__targetstates'><span className='homepage__current'>10,000</span>/13,000 Targer</p>
-            <p className='homepage__orders'>Orders in periods</p>
+            <p className="homepage__targetstates">
+              <span className="homepage__current">10,000</span>/13,000 Targer
+            </p>
+            <p className="homepage__orders">Orders in periods</p>
+          </div>
+        </div>
+        <div className="homepage__calender">
+          <h3 className="homepage__title">Calender</h3>
+          <div className="homepage__entry">
+            <p className="homepage__date">16 Mar, Tue</p>
+            <p className="homepage__description">Meeting with Director</p>
+          </div>
+          <div className="homepage__entry">
+            <p className="homepage__date">22 Mar, Mon</p>
+            <p className="homepage__description">Deadline for P1</p>
+          </div>
+          <div className="homepage__entry">
+            <p className="homepage__date">24 Mar, Wed</p>
+            <p className="homepage__description">Meeting with CRM</p>
+          </div>
+          <div className="homepage__entry">
+            <p className="homepage__date">Sep 28, Wed</p>
+            <p className="homepage__description">Demo Day</p>
+          </div>
+        </div>
+        <div className="homepage__piechart">
+          <h3 className="homepage__title">Order Breakdown</h3>
+          <PieChartGraph />
+          <div className="homepage__labels">
+            <div className="homepage__box">
+              <p className="homepage__description">In Shipment</p>
+            </div>
+            <div className="homepage__box homepage__box--refunds">
+              <p className="homepage__description">Refunds</p>
+            </div>
+            <div className="homepage__box homepage__box--delivered">
+              <p className="homepage__description">Delivered</p>
+            </div>
+            <div className="homepage__box homepage__box--processing">
+              <p className="homepage__description">Processing</p>
+            </div>
           </div>
         </div>
       </div>

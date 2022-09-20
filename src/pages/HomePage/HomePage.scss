@@ -82,4 +82,67 @@
   &__subtitle{
     margin: 0.5rem 0;
   }
+  &__target{
+   @extend .homepage__activeusers; 
+   justify-content: center;
+   align-items: flex-start;
+   flex-direction: row;
+  }
+  &__targetleft{
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+  }
+  &__targetstates{
+    @include body-mobile;
+    margin: 0 0 1rem 0;
+  }
+  &__current{
+    @include page-header-mobile;
+  }
+  &__orders{
+    @include body-mobile;
+    margin: 0;
+  }
+  &__calender{
+    @extend .homepage__activeusers;
+  }
+  &__entry{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  &__date{
+    @include body-mobile;
+  }
+  &__description{
+    @include body-mobile;
+  }
+  &__piechart{
+    width: 100%;
+    @extend .homepage__activeusers;
+  }
+  &__labels{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  &__box{
+    padding: 0.5rem;
+    width: 45%;
+    height: auto;
+    background-color: $coffee-pastelblue;
+    &--refunds{
+      background-color: $coffee-pastelred;
+    }
+    &--delivered{
+      background-color: $coffee-pastelgreen;
+    }
+    &--processing {
+      background-color: $coffee-pastelyellow;
+    }
+  }
 }
