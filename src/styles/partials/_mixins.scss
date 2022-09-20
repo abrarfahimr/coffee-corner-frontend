@@ -97,3 +97,10 @@
   justify-content: center;
   align-items: center;
 }
+
+
+//border-styling
+@mixin border {
+  border: 1px solid $coffee-grey900;
+  border-radius: 0.5rem;
+}

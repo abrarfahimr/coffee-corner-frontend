@@ -18,8 +18,7 @@
     flex-direction: column;
     width: fit-content;
     padding: 1.5rem;
-    border-radius: 0.5rem;
-    border: 1px solid $coffee-grey900;
+    @include border;
     margin: 0 1rem 1rem 0;
   }
   &__cardtitle{
@@ -37,7 +36,50 @@
     margin: 0.25rem 0;
     color: $coffee-darkyellow;
   }
-  &__graph{
-
+  &__products{
+    margin-bottom: 1.5rem;
+  }
+  &__productlist{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid $coffee-grey300;
+  }
+  &__coffee{
+    display: flex;
+    align-items: center;
+  }
+  &__image{
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    object-position: center;
+    margin-right: 1rem;
+  }
+  &__name{
+    margin: 0;
+    @include body-mobile;
+  }
+  &__price{
+    margin: 0;
+    @include body-mobile;
+  }
+  &__states{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__activeusers{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    @include border;
+    margin-bottom: 1.5rem;
+  }
+  &__subtitle{
+    margin: 0.5rem 0;
   }
 }
