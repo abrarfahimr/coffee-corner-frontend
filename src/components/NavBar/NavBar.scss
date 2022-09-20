@@ -2,3 +2,38 @@
 @use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
+
+.navbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 11.25rem;
+  height: 100vh;
+  background-color: $coffee-darkblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+  &__logo{
+    margin-bottom: 2.5rem;
+  }
+  &__links{
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  &__title{
+    text-decoration: none;
+    color: $coffee-grey500;
+    @include body-mobile;
+  }
+  &__icons{
+    margin-right: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

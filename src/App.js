@@ -6,11 +6,14 @@ import SalesPage from './pages/SalesPage/SalesPage';
 import ProductPage from './pages/ProductPage/ProductPage';
 import TransactionPage from './pages/TransactionPage/TransactionPage';
 
+import NavBar from './components/NavBar/NavBar';
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
+        <NavBar/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<Navigate to="/" />} />
