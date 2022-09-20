@@ -1,11 +1,12 @@
 import './HomePage.scss';
+import GraphChart from '../../components/BarChart/BarChart';
 
 const HomePage = () => {
   return (
     <main className="homepage">
       <h1 className="homepage__title">Overview</h1>
       <div className="homepage__cards">
-        <div className="homepage__card homepage__card--first">
+        <div className="homepage__card">
           <h2 className="homepage__cardtitle">Total Income</h2>
           <p className="homepage__amount">$100,000</p>
           <p className="homepage__increase">+5% last month</p>
@@ -23,6 +24,9 @@ const HomePage = () => {
       </div>
       <div className='homepage__report'>
         <h2 className='homepage__title'>Sales Report</h2>
+        <div className='homepage__graph'>
+          <GraphChart/>
+        </div>
       </div>
     </main>
   );

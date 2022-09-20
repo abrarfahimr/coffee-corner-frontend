@@ -20,10 +20,7 @@
     padding: 1.5rem;
     border-radius: 0.5rem;
     border: 1px solid $coffee-grey900;
-    margin-bottom: 1rem;
-    &--first{
-      margin-right: 1rem;
-    }
+    margin: 0 1rem 1rem 0;
   }
   &__cardtitle{
     @include page-nav-mobile;
@@ -39,5 +36,8 @@
     font-weight: 400;
     margin: 0.25rem 0;
     color: $coffee-darkyellow;
+  }
+  &__graph{
+
   }
 }
