@@ -31,9 +31,9 @@
 }
 
 @mixin page-header-mobile {
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   line-height: 1.125rem;
-  font-weight: 700;
+  font-weight: 600;
   @include tablet(){
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -42,7 +42,7 @@
 }
 
 @mixin subheader-mobile {
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   line-height: 1rem;
   font-weight: 600;
   @include tablet(){
@@ -74,3 +74,26 @@
   }
 }
 
+// flex styling
+@mixin flex-spaced-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-column-aligncenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

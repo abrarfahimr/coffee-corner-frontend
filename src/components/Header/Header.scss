@@ -5,9 +5,7 @@
 
 .header{
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-spaced-center;
   box-shadow: 0 1px 0 rgba($color: #0F172A, $alpha: 0.25);
   padding: 1rem;
   &__navicon{

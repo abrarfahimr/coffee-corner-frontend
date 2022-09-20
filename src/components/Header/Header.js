@@ -8,7 +8,7 @@ const Header = ({ sideBar, toggleSideBar }) => {
   return (
     <>
       <div className={sideBar ? 'backdrop--open' : 'backdrop'} onClick={toggleSideBar}></div>
-      <div className="header">
+      <header className="header">
         <img
           src={navIcon}
           alt="nav icon"
@@ -24,7 +24,7 @@ const Header = ({ sideBar, toggleSideBar }) => {
             className="header__settingicon"
           ></img>
         </div>
-      </div>
+      </header>
     </>
   );
 };

@@ -6,7 +6,7 @@ import logo from '../../assets/icons/logo.svg';
 
 const NavBar = ({ sideBar }) => {
   return (
-    <div className={sideBar? "navbar--open" : "navbar"}>
+    <nav className={sideBar? "navbar--open" : "navbar"}>
       <img src={logo} alt="logo" className="navbar__logo"></img>
       {NavBarData.map((data) => {
         return (
@@ -19,7 +19,7 @@ const NavBar = ({ sideBar }) => {
         );
       })}
       <div className="navbar__logout"></div>
-    </div>
+    </nav>
   );
 };
 

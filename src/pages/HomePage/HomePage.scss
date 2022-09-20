@@ -1,0 +1,43 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.homepage{
+  padding: 0 1rem;
+  &__title{
+    @include page-header-mobile;
+    margin: 1.5rem 0 1rem 0;
+  }
+  &__cards{
+    @include flex-center-center;
+    flex-wrap: wrap;
+  }
+  &__card{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid $coffee-grey900;
+    margin-bottom: 1rem;
+    &--first{
+      margin-right: 1rem;
+    }
+  }
+  &__cardtitle{
+    @include page-nav-mobile;
+    font-weight: 400;
+    margin: 0.25rem 0;
+  }
+  &__amount{
+    @include page-header-mobile;
+    margin: 0.25rem 0;
+  }
+  &__increase{
+    @include subheader-mobile;
+    font-weight: 400;
+    margin: 0.25rem 0;
+    color: $coffee-darkyellow;
+  }
+}
