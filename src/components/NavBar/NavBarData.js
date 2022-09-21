@@ -35,7 +35,7 @@ export const NavBarData = [
   {
     title: 'Customers',
     icon: customerIcon,
-    link: '/',
+    link: '/customer',
   },
 ];
 

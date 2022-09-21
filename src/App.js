@@ -6,6 +6,8 @@ import Header from './components/Header/Header';
 import SalesPage from './pages/SalesPage/SalesPage';
 import ProductPage from './pages/ProductPage/ProductPage';
 import TransactionPage from './pages/TransactionPage/TransactionPage';
+import CustomerPage from './pages/CustomerPage/CustomerPage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 import NavBar from './components/NavBar/NavBar';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
           <Route path="/sales" element={<SalesPage />} />
           <Route path="/products" element={<ProductPage />} />
           <Route path="/transaction" element={<TransactionPage />} />
+          <Route path="/customer" element={<CustomerPage/> }/>
+          <Route path='*' element={<ErrorPage/> } />
         </Routes>
       </BrowserRouter>
     </div>

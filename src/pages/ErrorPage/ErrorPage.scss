@@ -3,7 +3,7 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
-.sales {
+.error {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +33,6 @@
   &__button {
     @include buttonStyle;
     @include label-mobile;
-
     &:hover {
       transition-duration: 0.2s;
       background-color: $coffee-darkblue;

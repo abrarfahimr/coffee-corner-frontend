@@ -1,8 +1,7 @@
-import './SalesPage.scss';
+import './CustomerPage.scss';
 import { useNavigate } from 'react-router-dom';
 
-const SalesPage = () => {
-
+const CustomerPage = () => {
   //use navigates redirects to home page
   const navigate = useNavigate();
   const returnHome = () => {
@@ -10,16 +9,16 @@ const SalesPage = () => {
   };
 
   return (
-    <div className="sales">
-      <h1 className="sales__heading">Coming soon in future sprints 🚀</h1>
-      <p className="sales__description">
+    <div className="customer">
+      <h1 className="customer__heading">Coming soon in future sprints 🚀</h1>
+      <p className="customer__description">
         For now checkout other cool features down below. ⬇️
       </p>
-      <button className="sales__button" onClick={returnHome}>
+      <button className="customer__button" onClick={returnHome}>
         Homepage
       </button>
     </div>
   );
-}
+};
 
-export default SalesPage;
+export default CustomerPage;

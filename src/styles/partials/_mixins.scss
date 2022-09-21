@@ -104,3 +104,15 @@
   border: 1px solid $coffee-grey900;
   border-radius: 0.5rem;
 }
+
+//button styling
+@mixin buttonStyle {
+  @include flex-center-center();
+  width: 100%;
+  height: 2.5rem;
+  background-color: $coffee-blue;
+  border: none;
+  border-radius: 0.25rem;
+  color: $coffee-white;
+  padding: 1rem;
+}
