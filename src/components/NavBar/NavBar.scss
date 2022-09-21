@@ -8,13 +8,17 @@
   top: 0;
   left: 0;
   z-index: 10;
-  width: 11.25rem;
+  width: 15%;
   height: 100vh;
   background-color: $coffee-darkblue;
   @include flex-column-aligncenter;
   padding: 1.5rem 0;
   transform: translateX(-100%);
   transition: 0.4s;
+  @include desktop{
+    flex: 1;
+    transform: translateX(0%);
+  }
   &--open{
     @extend .navbar;
     transform: translateX(0%);

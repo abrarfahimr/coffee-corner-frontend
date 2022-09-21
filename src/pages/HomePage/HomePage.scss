@@ -8,6 +8,11 @@
   @include tablet{
     padding: 0 8.125rem;
   }
+  @include desktop {
+    width: 85%;
+    margin-left: 15%;
+    padding: 0 7.1875rem;
+  }
   &__title{
     @include page-header-mobile;
     margin: 1.5rem 0 1rem 0;

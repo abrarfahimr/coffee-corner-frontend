@@ -8,8 +8,16 @@
   @include flex-spaced-center;
   box-shadow: 0 1px 0 rgba($color: #0F172A, $alpha: 0.25);
   padding: 1rem;
+  @include desktop{
+    width: 85%;
+    margin-left: 15%;
+    padding: 1.5rem 3.75rem;
+  }
   &__navicon{
     cursor: pointer;
+    @include desktop{
+      display: none;
+    }
   }
   &__title{
     margin: 0;
