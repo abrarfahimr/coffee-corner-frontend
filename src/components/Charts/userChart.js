@@ -11,74 +11,74 @@ import {
 const data = [
   {
     date: 'Mar 10',
-    uv: 4000,
-    pv: 2400,
+    website: 4000,
+    adclick: 2400,
     amt: 2400,
   },
   {
     date: 'Mar 11',
-    uv: 3000,
-    pv: 1398,
+    website: 3000,
+    adclick: 1398,
     amt: 2210,
   },
   {
     date: 'Mar 12',
-    uv: 2000,
-    pv: 9800,
+    website: 2000,
+    adclick: 9800,
     amt: 2290,
   },
   {
     date: 'Mar 13',
-    uv: 2780,
-    pv: 3908,
+    website: 2780,
+    adclick: 3908,
     amt: 2000,
   },
   {
     date: 'Mar 14',
-    uv: 1890,
-    pv: 4800,
+    website: 1890,
+    adclick: 4800,
     amt: 2181,
   },
   {
     date: 'Mar 15',
-    uv: 2390,
-    pv: 3800,
+    website: 2390,
+    adclick: 3800,
     amt: 2500,
   },
   {
     date: 'Mar 16',
-    uv: 3490,
-    pv: 4300,
+    website: 3490,
+    adclick: 4300,
     amt: 2100,
   },
   {
     date: 'Mar 17',
-    uv: 4000,
-    pv: 2400,
+    website: 4000,
+    adclick: 2400,
     amt: 2400,
   },
   {
     date: 'Mar 18',
-    uv: 3000,
-    pv: 1398,
+    website: 3000,
+    adclick: 1398,
     amt: 2210,
   },
   {
     date: 'Mar 19',
-    uv: 2000,
-    pv: 9800,
+    website: 2000,
+    adclick: 9800,
     amt: 2290,
   },
   {
     date: 'Mar 20',
-    uv: 2780,
-    pv: 3908,
+    website: 2780,
+    adclick: 3908,
     amt: 2000,
   },
   {
     date: 'Mar 21',
-    uv: 1890,
-    pv: 4800,
+    website: 1890,
+    adclick: 4800,
     amt: 2181,
   },
 ];
@@ -102,8 +102,8 @@ const UserChart = () => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="#A0D4FF" />
-        <Bar dataKey="uv" fill="#FE9399" />
+        <Bar dataKey="adclick" fill="#A0D4FF" />
+        <Bar dataKey="website" fill="#FE9399" />
       </BarChart>
     </ResponsiveContainer>
   );

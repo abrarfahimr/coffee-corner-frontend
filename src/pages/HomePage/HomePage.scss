@@ -20,11 +20,35 @@
       margin: 2rem 0;
     }
   }
+  &__secondarytitle{
+    @include subheader-mobile;
+  }
+  &__top{
+    @include desktop{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+   
+  }
+  &__producttable{
+    @include desktop{
+      width: 42%;
+    }
+  }
+  &__overview{
+    @include desktop{
+      width: 55%;
+    }
+  }
   &__cards{
     @include flex-center-center;
     flex-wrap: wrap;
     @include tablet{
       margin-bottom: 2rem;
+    }
+    @include desktop{
+      justify-content: flex-start;
     }
   }
   &__card{
@@ -42,11 +66,21 @@
     @include tablet{
       font-weight: 400;
     }
+    @include desktop{
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      font-weight: 400;
+    }
   }
   &__amount{
     @include page-header-mobile;
     margin: 0.25rem 0;
     @include tablet{
+      font-weight: 600;
+    }
+    @include desktop{
+      font-size: 1rem;
+      line-height: 1.125rem;
       font-weight: 600;
     }
   }
@@ -55,6 +89,10 @@
     font-weight: 400;
     margin: 0.25rem 0;
     color: $coffee-darkyellow;
+    @include desktop{
+      font-size: 0.6875rem;
+      font-weight: 600;
+    }
   }
   &__report{
     margin-bottom: 1.5rem;
@@ -68,6 +106,10 @@
       padding: 2.625rem 1rem;
       @include border;
       margin: 0 1.25rem 2rem 1.25rem;
+    }
+    @include desktop{
+      margin: 0;
+      
     }
   }
   &__productlist{
@@ -93,10 +135,17 @@
   &__name{
     margin: 0;
     @include body-mobile;
+    @include desktop{
+      font-size: 0.75rem;
+    }
   }
   &__price{
     margin: 0;
     @include body-mobile;
+    @include desktop {
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
   }
   &__states{
     width: 100%;
@@ -107,6 +156,11 @@
       justify-content: center;
       align-items: flex-start;
       flex-wrap: wrap;
+    }
+    @include desktop{
+      width: 100%;
+      flex-wrap: nowrap;
+      justify-content: space-between;
     }
   }
   &__leftstates{
@@ -134,11 +188,17 @@
    justify-content: center;
    align-items: flex-start;
    flex-direction: row;
+   @include desktop{
+    align-items: center;
+   }
   }
   &__targetleft{
     display: flex;
     align-items: center;
     margin-right: 2rem;
+    @include desktop{
+      font-size: 1.25rem
+    }
   }
   &__targetstates{
     @include body-mobile;
@@ -156,6 +216,10 @@
     @include tablet{
       width: 47%;
     }
+    @include desktop{
+      width: 30%;
+      margin-right: 2rem;
+    }
   }
   &__entry{
     display: flex;
@@ -168,38 +232,50 @@
   }
   &__date{
     @include body-mobile;
+    width: 50%;
     @include tablet {
         font-size: 0.75rem;
         line-height: 1rem;
         font-weight: 400;
       }
-
   }
   &__description{
-    @include body-mobile;
+    @include label-mobile;
+    width: 50%;
     @include tablet{
       font-size: 0.75rem;
       line-height: 1rem;
       font-weight: 400;
     }
+
   }
   &__piechart{
     width: 100%;
     @extend .homepage__activeusers;
     @include tablet{
-      width: 70%;
+      width: 60%;
+    }
+    @include desktop{
+      width: 30%;
     }
   }
   &__labels{
     @include flex-spaced-center;
     flex-wrap: wrap;
     padding: 0 2rem;
+    @include desktop{
+      padding: 0;
+      margin-top: 1rem;
+    }
   }
   &__box{
     padding: 0.5rem;
     width: 45%;
     height: auto;
     background-color: $coffee-pastelblue;
+    @include desktop{
+
+    }
     &--refunds{
       background-color: $coffee-pastelred;
     }

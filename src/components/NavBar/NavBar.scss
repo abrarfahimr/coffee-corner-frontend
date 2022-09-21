@@ -3,6 +3,13 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+a,
+a:hover,
+a:focus,
+a:active {
+  color: $coffee-white;
+}
+
 .navbar{
   position: fixed;
   top: 0;
@@ -40,6 +47,9 @@
     text-decoration: none;
     color: $coffee-grey500;
     @include body-mobile;
+    &:hover {
+        color: $coffee-white;
+    }
   }
   &__icons{
     margin-right: 0.5rem;
