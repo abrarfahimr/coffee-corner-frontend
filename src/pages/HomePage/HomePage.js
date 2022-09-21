@@ -48,54 +48,58 @@ const HomePage = () => {
         <div className="homepage__productlist">
           <div className="homepage__coffee">
             <img src={coffeeImage2} alt="" className="homepage__image" />
-            <p className="homepage__name">Lava Coffee</p>
+            <p className="homepage__name">Egoest Latte</p>
           </div>
-          <p className="homepage__price">$540</p>
+          <p className="homepage__price">$429</p>
         </div>
         <div className="homepage__productlist">
           <div className="homepage__coffee">
             <img src={coffeeImage3} alt="" className="homepage__image" />
-            <p className="homepage__name">Lava Coffee</p>
+            <p className="homepage__name">VintageBee Coffee</p>
           </div>
-          <p className="homepage__price">$540</p>
+          <p className="homepage__price">$346</p>
         </div>
         <div className="homepage__productlist">
           <div className="homepage__coffee">
             <img src={coffeeImage4} alt="" className="homepage__image" />
-            <p className="homepage__name">Lava Coffee</p>
+            <p className="homepage__name">Ancient twist kava</p>
           </div>
-          <p className="homepage__price">$540</p>
+          <p className="homepage__price">$274</p>
         </div>
         <div className="homepage__productlist">
           <div className="homepage__coffee">
             <img src={coffeeImage5} alt="" className="homepage__image" />
-            <p className="homepage__name">Lava Coffee</p>
+            <p className="homepage__name">Beaneriffic</p>
           </div>
-          <p className="homepage__price">$540</p>
+          <p className="homepage__price">$224</p>
         </div>
         <div className="homepage__productlist">
           <div className="homepage__coffee">
             <img src={coffeeImage6} alt="" className="homepage__image" />
-            <p className="homepage__name">Lava Coffee</p>
+            <p className="homepage__name">Missile Brew</p>
           </div>
-          <p className="homepage__price">$540</p>
+          <p className="homepage__price">$180</p>
         </div>
       </div>
       <div className="homepage__states">
-        <div className="homepage__activeusers">
-          <h3 className="homepage__title">Active Users</h3>
-          <p className="hoempage__subtitle">Per Page Visited</p>
-          <UserChart />
-        </div>
-        <div className="homepage__target">
-          <div className="homepage__targetleft">75%</div>
-          <div className="homepage__targetright">
-            <p className="homepage__targetstates">
-              <span className="homepage__current">10,000</span>/13,000 Targer
-            </p>
-            <p className="homepage__orders">Orders in periods</p>
+
+        <div className='homepage__leftstates'>
+          <div className="homepage__activeusers">
+            <h3 className="homepage__title">Active Users</h3>
+            <p className="homepage__subtitle">Per Page Visited</p>
+            <UserChart />
+          </div>
+          <div className="homepage__target">
+            <div className="homepage__targetleft">75%</div>
+            <div className="homepage__targetright">
+              <p className="homepage__targetstates">
+                <span className="homepage__current">10,000</span>/13,000 Target
+              </p>
+              <p className="homepage__orders">Orders in periods</p>
+            </div>
           </div>
         </div>
+
         <div className="homepage__calender">
           <h3 className="homepage__title">Calender</h3>
           <div className="homepage__entry">

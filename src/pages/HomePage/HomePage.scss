@@ -5,13 +5,22 @@
 
 .homepage{
   padding: 0 1rem;
+  @include tablet{
+    padding: 0 8.125rem;
+  }
   &__title{
     @include page-header-mobile;
     margin: 1.5rem 0 1rem 0;
+    @include tablet{
+      margin: 2rem 0;
+    }
   }
   &__cards{
     @include flex-center-center;
     flex-wrap: wrap;
+    @include tablet{
+      margin-bottom: 2rem;
+    }
   }
   &__card{
     display: flex;
@@ -25,10 +34,16 @@
     @include page-nav-mobile;
     font-weight: 400;
     margin: 0.25rem 0;
+    @include tablet{
+      font-weight: 400;
+    }
   }
   &__amount{
     @include page-header-mobile;
     margin: 0.25rem 0;
+    @include tablet{
+      font-weight: 600;
+    }
   }
   &__increase{
     @include subheader-mobile;
@@ -36,14 +51,28 @@
     margin: 0.25rem 0;
     color: $coffee-darkyellow;
   }
+  &__report{
+    margin-bottom: 1.5rem;
+    @include tablet{
+      margin-bottom: 2rem;
+    }
+  }
   &__products{
     margin-bottom: 1.5rem;
+    @include tablet{
+      padding: 2.625rem 1rem;
+      @include border;
+      margin: 0 1.25rem 2rem 1.25rem;
+    }
   }
   &__productlist{
     width: 100%;
     @include flex-spaced-center;
     padding: 0.5rem 0;
     border-bottom: 1px solid $coffee-grey300;
+    @include tablet{
+      padding: 0.5rem 1.5rem;
+    }
   }
   &__coffee{
     display: flex;
@@ -65,7 +94,21 @@
     @include body-mobile;
   }
   &__states{
+    width: 100%;
     @include flex-column-aligncenter;
+    @include tablet{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+  &__leftstates{
+    @include tablet{
+      width: 45%;
+      margin-right: 2rem;
+    }
   }
   &__activeusers{
     display: flex;
@@ -77,6 +120,9 @@
   }
   &__subtitle{
     margin: 0.5rem 0;
+    @include tablet{
+      margin: 0 0 1rem 0;
+    }
   }
   &__target{
    @extend .homepage__activeusers; 
@@ -102,22 +148,42 @@
   }
   &__calender{
     @extend .homepage__activeusers;
+    @include tablet{
+      width: 47%;
+    }
   }
   &__entry{
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 0 1rem;
+    @include tablet{
+      padding: 0;
+    }
   }
   &__date{
     @include body-mobile;
+    @include tablet {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-weight: 400;
+      }
+
   }
   &__description{
     @include body-mobile;
+    @include tablet{
+      font-size: 0.75rem;
+      line-height: 1rem;
+      font-weight: 400;
+    }
   }
   &__piechart{
     width: 100%;
     @extend .homepage__activeusers;
+    @include tablet{
+      width: 70%;
+    }
   }
   &__labels{
     @include flex-spaced-center;
