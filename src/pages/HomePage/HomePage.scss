@@ -41,9 +41,7 @@
   }
   &__productlist{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-spaced-center;
     padding: 0.5rem 0;
     border-bottom: 1px solid $coffee-grey300;
   }
@@ -67,9 +65,7 @@
     @include body-mobile;
   }
   &__states{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-column-aligncenter;
   }
   &__activeusers{
     display: flex;
@@ -124,10 +120,8 @@
     @extend .homepage__activeusers;
   }
   &__labels{
-    display: flex;
+    @include flex-spaced-center;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 2rem;
   }
   &__box{
