@@ -3,6 +3,13 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+a,
+a:hover,
+a:focus,
+a:active {
+  color: $coffee-white;
+}
+
 .navbar{
   position: fixed;
   top: 0;
