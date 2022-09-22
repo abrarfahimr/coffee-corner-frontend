@@ -12,7 +12,10 @@ const NavBar = ({ sideBar }) => {
         return (
           <div className="navbar__links" key={uuidv4()}>
             <img src={data.icon} alt="nav icon" className="navbar__icons"></img>
-            <NavLink to={data.link} className="navbar__title">
+            <NavLink
+              to={data.link}
+              className="navbar__title"
+            >
               {data.title}
             </NavLink>
           </div>

@@ -10,7 +10,7 @@ export const NavBarData = [
   {
     title: 'Home',
     icon: homeIcon ,
-    link: '/',
+    link: '/home',
   },
   {
     title: 'Sales',
@@ -20,7 +20,7 @@ export const NavBarData = [
   {
     title: 'Marketing',
     icon: marketingIcon,
-    link: '/',
+    link: '/marketing',
   },
   {
     title: 'Products',

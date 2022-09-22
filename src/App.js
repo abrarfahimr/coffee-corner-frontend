@@ -25,8 +25,8 @@ function App() {
         />
         <NavBar sideBar={sideBar}/>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<Navigate to="/" />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/sales" element={<SalesPage />} />
           <Route path="/products" element={<ProductPage />} />
           <Route path="/transaction" element={<TransactionPage />} />

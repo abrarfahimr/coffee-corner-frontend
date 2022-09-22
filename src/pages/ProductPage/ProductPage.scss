@@ -129,7 +129,11 @@
     width: 2.1875rem;
     height: 2.1875rem;
     border-radius: 50%;
-    margin-right: 0.5rem
+    margin-right: 0.5rem;
+    @include desktop{
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
   &__product, &__id, &__stock, &__price, &__sales{
     width: 50%;

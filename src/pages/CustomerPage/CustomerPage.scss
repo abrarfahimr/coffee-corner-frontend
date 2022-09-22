@@ -38,6 +38,8 @@
   &__button {
     @include buttonStyle;
     @include label-mobile;
+    background-color: $coffee-blue;
+    color: $coffee-white;
 
     &:hover {
       transition-duration: 0.2s;
