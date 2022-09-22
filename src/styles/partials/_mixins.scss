@@ -98,6 +98,18 @@
   align-items: center;
 }
 
+@mixin flex-spaced-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin flex-column-flexend {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 
 //border-styling
 @mixin border {
@@ -109,10 +121,11 @@
 @mixin buttonStyle {
   @include flex-center-center();
   width: 100%;
-  height: 2.5rem;
-  background-color: $coffee-blue;
   border: none;
-  border-radius: 0.25rem;
-  color: $coffee-white;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  &:hover{
+    transition-duration: 0.2s;
+    background-color: $coffee-darkblue;
+  }
 }
