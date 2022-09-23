@@ -82,7 +82,7 @@
 
     @include tablet {
       width: 100%;
-      @include flex-spaced-center;
+      @include flex-spaced-start;
       background-color: $coffee-grey300;
       padding: 0.5rem 1rem;
     }
@@ -111,6 +111,18 @@
       display: none;
       margin: 0
     }
+  }
+  &__titleid,
+  &__titleproduct, 
+  &__titlecustomer,
+  &__titledate, 
+  &__titleamount,
+  &__titlemethod, 
+  &__titlestatus{
+
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin: 0;
   }
 
   &__numbers {
@@ -141,13 +153,13 @@
     @include tablet {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
     }
   }
 
   &__id {
     @include tablet {
-      width: 40%;
+      width: 50%;
     }
 
     @include desktop {
@@ -162,9 +174,10 @@
     @include flex-column-flexend;
 
     @include tablet {
-      align-items: center;
+      align-items: flex-start;
     }
   }
+  &
 
   &__products{
     @include tablet{
@@ -183,9 +196,6 @@
     }
   }
   &__amount {
-    display: flex;
-    flex-direction: column;
-
     @include tablet {
       width: 50%;
     }

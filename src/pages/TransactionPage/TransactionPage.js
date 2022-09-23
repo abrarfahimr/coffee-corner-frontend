@@ -34,30 +34,30 @@ const TransactionPage = () => {
       <div className="transactions__column">
         <div className="transactions__firstlist">
           <div className="transactions__id">
-            <h3 className="transactions__title">Transaction ID</h3>
+            <h3 className="transactions__titleid">Transaction ID</h3>
           </div>
           <div className="transactions__products">
-            <h3 className="transactions__title">Products</h3>
+            <h3 className="transactions__titleproduct">Products</h3>
           </div>
         </div>
         <div className="transactions__secondlist">
           <div className="transactions__customer">
-            <h3 className="transactions__title">Customer</h3>
+            <h3 className="transactions__titlecustomer">Customer</h3>
           </div>
           <div className="transactions__date">
-            <h3 className="transactions__title">Date</h3>
+            <h3 className="transactions__titledate">Date</h3>
           </div>
         </div>
         <div className="transactions__thirdlist">
           <div className="transactions__amount">
-            <h3 className="transactions__title">Amount</h3>
+            <h3 className="transactions__titleamount">Amount</h3>
           </div>
           <div className="transactions__payment">
-            <h3 className="transactions__title">Payment Method</h3>
+            <h3 className="transactions__titlemethod">Payment Method</h3>
           </div>
         </div>
         <div className="transactions__fourthlist">
-          <h3 className="transactions__title">Status</h3>
+          <h3 className="transactions__titlestatus">Status</h3>
         </div>
       </div>
       {transactions.map((transaction) => {
