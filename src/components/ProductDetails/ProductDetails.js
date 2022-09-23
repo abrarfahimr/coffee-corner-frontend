@@ -1,5 +1,4 @@
 import './ProductDetails.scss';
-// import { NavLink, useNavigate } from 'react-router-dom';
 import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
@@ -11,7 +10,6 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 const ProductDetails = () => {
   const [product, setProduct] = useState([])
-  // const navigate = useNavigate();
   let { id } = useParams();
 
   //make get request with axios
