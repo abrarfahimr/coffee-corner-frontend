@@ -11,10 +11,15 @@
     justify-content: center;
     padding: 1.5rem 2.5rem;
   }
-  @include desktop{
+  @include desktop {
+    @include border;
+  }
+  &__wrapper{
     width: 85%;
     margin-left: 15%;
+    padding: 1.5rem 8.125rem;
   }
+
   &__imagecontainer{
     width: 100%;
     @include tablet{
