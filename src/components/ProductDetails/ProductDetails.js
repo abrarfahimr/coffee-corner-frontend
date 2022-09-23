@@ -4,6 +4,8 @@ import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
+import editIcon from '../../assets/icons/edit.svg';
+import deleteIcon from '../../assets/icons/delete.svg'
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -73,8 +75,12 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-        <div className='details__buttons'>
-          <Link></Link>
+        <div className="details__buttons">
+          <Link to={`/products/${currentId}/edit`} className="details__button">
+            <img src={editIcon} alt="edit icon" className="details__icon" />{' '}
+            Edit
+          </Link>
+          <button className='details__delete'><img src={deleteIcon} alt='delete icon' className='details__icon'/>Delete</button>
         </div>
       </div>
     </div>

@@ -59,4 +59,19 @@
   &__id, &__stock, &__price, &__sales{
     width: 50%;
   }
+  &__button {
+    @include buttonStyle;
+    text-decoration: none;
+    background-color: $coffee-blue;
+    color: $coffee-white;
+    margin: 0 0 1rem 0;
+  }
+  &__delete{
+    @include buttonStyle;
+    background-color: $coffee-darkyellow;
+    color: $coffee-white;
+  }
+  &__icon{
+    margin-right: 0.5rem;
+  }
 }
