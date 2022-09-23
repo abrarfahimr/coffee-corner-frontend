@@ -211,6 +211,7 @@
   }
   &__button{
     @include buttonStyle;
+    text-decoration: none;
     background-color: $coffee-blue;
     color: $coffee-white;
   }

@@ -80,6 +80,11 @@
   justify-content: center;
 }
 
+@mixin flex-spaced {
+  display: flex;
+  justify-content: space-between;
+}
+
 @mixin flex-spaced-center {
   display: flex;
   justify-content: space-between;

@@ -251,7 +251,11 @@
   }
   &__statusbar{
     @include label-mobile;
-    @include buttonStyle;
+    @include flex-center-center;
+    width: 100%;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
     @include tablet{
       font-size: 0.75rem;
       margin: 0;

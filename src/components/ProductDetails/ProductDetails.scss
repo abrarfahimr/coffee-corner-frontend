@@ -1,0 +1,62 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.details{
+  padding: 1.5rem 1rem;
+  @include desktop{
+    width: 85%;
+    margin-left: 15%;
+  }
+  &__imagecontainer{
+    width: 100%;
+  }
+  &__image{
+    width: 100%;
+  }
+  &__text{
+    @include flex-column-aligncenter;
+    width: 100%;
+  }
+  &__title{
+    @include page-header-mobile;
+  }
+  &__description{
+    @include body-mobile;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  &__stats{
+    @include flex-spaced;
+    margin-bottom: 1.5rem;
+  }
+  &__statcontainer{
+    @include flex-center-center;
+    flex-direction: column;
+  }
+  &__key{
+    @include body-mobile;
+    margin: 0;
+  }
+  &__value{
+    @include body-mobile;
+    margin: 0.5rem 0;
+    &--bold{
+      @extend .details__value;
+      font-weight: 600;
+    }
+  }
+  &__topinfo{
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  &__bottominfo{
+    @extend .details__topinfo;
+    margin-bottom: 1.5rem;
+  }
+  &__id, &__stock, &__price, &__sales{
+    width: 50%;
+  }
+}
