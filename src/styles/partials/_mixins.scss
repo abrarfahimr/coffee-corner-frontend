@@ -75,11 +75,17 @@
 }
 
 // flex styling
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
 @mixin flex-spaced-center {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 @mixin flex-column-aligncenter {
   display: flex;
   flex-direction: column;
