@@ -3,19 +3,11 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import ProductList from '../../components/ProductList/ProductList';
-import {useNavigate } from 'react-router-dom';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
-
-  const navigate = useNavigate();
-
-  const onClickHandler = (event) => {
-    event.preventDefault();
-    navigate('/products/:id')
-  }  
 
   useEffect(() => {
     const url = `${API_URL}/products`;
@@ -73,7 +65,6 @@ const ProductPage = () => {
           <ProductList
             product={product}
             key={uuidv4()}
-            onClickHandler={onClickHandler}
           />
         );
       })}

@@ -2,3 +2,23 @@
 @use './styles/partials/fonts' as *;
 @use './styles/partials/mixins' as *;
 @use './styles/partials/variables' as *;
+
+.error {
+  position: relative;
+  bottom: 1.6rem;
+  display: none;
+  align-items: center;
+  color: $coffee-error;
+  @include label-mobile;
+  margin: 0;
+
+  &__icon {
+    width: 1.333rem;
+    height: 1.333rem;
+  }
+
+  &--active {
+    @extend .error;
+    display: flex;
+  }
+}

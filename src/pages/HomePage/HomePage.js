@@ -8,8 +8,23 @@ import coffeeImage3 from '../../assets/images/image03.png';
 import coffeeImage4 from '../../assets/images/image04.png';
 import coffeeImage5 from '../../assets/images/image05.png';
 import coffeeImage6 from '../../assets/images/image06.png';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 const HomePage = () => {
+
+  const [products, setProduct] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/products`)
+      .then(response => {
+        setProduct(response.data)
+      })
+  }, []);
+
   return (
     <main className="homepage">
       <h1 className="homepage__title">Overview</h1>
@@ -122,7 +137,7 @@ const HomePage = () => {
             <p className="homepage__description">Meeting with CRM</p>
           </div>
           <div className="homepage__entry">
-            <p className="homepage__date">Sep 28, Wed</p>
+            <p className="homepage__date">Sep 29, Wed</p>
             <p className="homepage__description">Demo Day</p>
           </div>
         </div>

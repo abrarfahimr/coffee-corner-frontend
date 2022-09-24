@@ -126,6 +126,11 @@
   flex-direction: column;
   align-items: flex-start;
 }
+@mixin flex-start-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
 
 //border-styling
@@ -137,6 +142,7 @@
 //button styling
 @mixin buttonStyle {
   @include flex-center-center();
+  font-family: 'Poppins';
   width: 100%;
   border: none;
   padding: 0.5rem 1rem;
@@ -145,4 +151,35 @@
     transition-duration: 0.2s;
     background-color: $coffee-darkblue;
   }
+}
+
+@mixin secondaryBtn {
+  @include flex-center-center();
+  text-decoration: none;
+  font-family: 'Poppins';
+  padding: 0.5rem 2.5rem;
+  border: none;
+  color: $coffee-grey500;
+  border: 1px solid $coffee-grey500;
+}
+
+//universal input field styling
+@mixin inputField {
+  font-family: 'Poppins';
+  margin-bottom: 1.6rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid $coffee-grey300;
+  border-radius: 2rem;
+
+  &:active {
+    outline: 1px solid $coffee-blue;
+  }
+
+  @include tablet {
+    margin-bottom: 2.4rem;
+  }
+}
+
+@mixin errorBorder {
+  border: 1px solid $coffee-error;
 }

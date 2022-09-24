@@ -15,9 +15,12 @@
     @include border;
   }
   &__wrapper{
-    width: 85%;
-    margin-left: 15%;
-    padding: 1.5rem 8.125rem;
+    @include desktop{
+      width: 85%;
+      margin-left: 15%;
+      padding: 1.5rem 8.125rem;
+    }
+ 
   }
 
   &__imagecontainer{
@@ -91,9 +94,9 @@
     width: 50%;
   }
   &__buttons{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    @include tablet{
+      @include flex-start-start;
+    }
   }
   &__button {
     @include buttonStyle;

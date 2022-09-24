@@ -2,3 +2,223 @@
 @use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
+
+.editproduct{
+  background-color: $coffee-white;
+  color: $coffee-grey900;
+  padding: 0 1rem;
+  &__headingcontainer {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 1.5rem 0 0 0;
+
+      @include tablet {
+        justify-content: flex-start;
+        padding: 3.2rem 0 2.1rem 3.6rem;
+      }
+  
+      @include desktop {
+        padding: 3.2rem 0 2.1rem 4.4rem;
+      }
+    }
+  
+  &__header {
+    @include page-header-mobile;
+    margin: 0 0 0 1.2rem;
+  }
+
+  &__navicon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__form {
+    width: 100%;
+  }
+
+  &__formcontainer {
+    @include tablet {
+      width: 100%;
+      display: flex;
+      margin: 2.4rem 0;
+    }
+
+  }
+  &__topform {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      width: 100%;
+      border: none;
+    }
+
+    @include desktop {
+      padding: 0 4rem;
+    }
+  }
+  &__subheading {
+    @include subheader-mobile;
+    margin: 1.6rem 0 2.4rem 0;
+
+    @include tablet {
+      margin: 2.4rem 0 3.2rem 0;
+    }
+  }
+  &__label {
+    @include label-mobile;
+    margin-bottom: 0.4rem;
+  }
+
+  &__name,
+  &__description,
+  &__roast{
+    @include inputField;
+  }
+
+  &__name {
+    &--error {
+      @extend .editproduct__name;
+      @include errorBorder;
+    }
+  }
+
+  &__description {
+    min-height: 12rem;
+    resize: none;
+    font-family: Poppins;
+
+    &--error {
+      @extend .editproduct__description;
+      @include errorBorder;
+    }
+  }
+
+  &__container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  &__roast{
+    appearance: none;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins';
+    @include label-mobile;
+    color: $coffee-grey900;
+    &--error{
+      @extend .editproduct__roast;
+      @include errorBorder;
+    }
+  }
+  &__type{
+    @extend .editproduct__roast;
+    &--error{
+      @extend .editproduct__roast;
+      @include errorBorder;
+    }
+  }
+  &__body{
+    @extend .editproduct__roast;
+    &--error{
+      @extend .editproduct__roast;
+      @include errorBorder;
+    }
+  }
+  &__acidity{
+    @extend .editproduct__roast;
+    
+    &--error {
+      @extend .editproduct__roast;
+      @include errorBorder;
+    }
+  }
+  &__stock{
+    @extend .editproduct__roast;
+    &--error {
+      @extend .editproduct__roast;
+      @include errorBorder;
+    }
+  }
+  
+  &__price{
+  @extend .editproduct__roast;
+  padding: 0.8rem 1.6rem 0.8rem 2.5rem;
+  
+    &--error {
+      @extend .editproduct__roast;
+      @include errorBorder;
+    }
+  }
+
+  &__downarrow{
+    pointer-events: none;
+    &::before,
+    &::after {
+      position: absolute;
+      height: 100%;
+      width: 1.5rem;
+      top: 2rem;
+      right: 1rem;
+      content: "";
+      background: url('../../assets/icons/arrow-down.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__dollar{
+    position: absolute;
+    width: 1rem;
+    height: 100%;
+    top: 2.25rem;
+    left: 1rem;
+    background: url("../../assets/icons/dollar.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 2rem;
+    @include tablet {
+      justify-content: flex-end;
+    }
+    @include desktop {
+
+    }
+  }
+
+  &__cancel {
+    @include secondaryBtn;
+    @include body-mobile;
+    max-width: 45%;
+    margin-right: 1rem;
+    &:hover {
+      transition-duration: 0.2s;
+      background-color: $coffee-grey200;
+    }
+  }
+
+  &__save {
+    max-width: 45%;
+    @include buttonStyle;
+    @include body-mobile;
+    padding: 0.5rem 2rem;
+    margin: 0;
+    background-color: $coffee-blue;
+    color: $coffee-white;
+
+    &:hover {
+      transition-duration: 0.2s;
+      background-color: $coffee-darkblue;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    @include body-mobile;
+  }
+}

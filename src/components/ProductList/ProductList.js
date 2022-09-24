@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import editIcon from "../../assets/icons/edit.svg";
 
-const ProductList = ({ product, onClickHandler }) => {
+const ProductList = ({ product }) => {
 
   return (
     <div className="products__list">
