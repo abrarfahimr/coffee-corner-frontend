@@ -122,7 +122,7 @@ const EditProduct = () => {
   };
 
   const isPriceValid = () => {
-    if (price === '' || price === 0) {
+    if (price === '' || price === "0") {
       return false;
     }
     return true;
@@ -211,7 +211,7 @@ const EditProduct = () => {
         setUpload(response.data.image)
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [currentId]);
 
   //return back when you cancel edit inventory
   const returnBack = () => {

@@ -20,7 +20,7 @@ const AddProduct = () => {
   const [acidity, setAcidity] = useState('');
   const [stock, setStock] = useState(0);
   const [price, setPrice] = useState(0);
-  const [upload, setUpload] = useState('');
+  // const [upload, setUpload] = useState('');
 
   //validating errors of all forms
   const [nameError, setNameError] = useState(false);
@@ -123,10 +123,10 @@ const AddProduct = () => {
     }
   };
 
-  //handle change for upload
-  const handleChangeUpload = (event) => {
-    setUpload(event.target.value);
-  };
+  // //handle change for upload
+  // const handleChangeUpload = (event) => {
+  //   setUpload(event.target.value);
+  // };
 
   //Checking to see if inputs are valid
   const isNameValid = () => {
@@ -193,12 +193,12 @@ const AddProduct = () => {
     return true;
   };
 
-  const isUploadValid = () => {
-    if (price === '') {
-      return false;
-    }
-    return true;
-  };
+  // const isUploadValid = () => {
+  //   if (price === '') {
+  //     return false;
+  //   }
+  //   return true;
+  // };
 
   //check to see if all forms are valid
   const isFormValid = () => {
