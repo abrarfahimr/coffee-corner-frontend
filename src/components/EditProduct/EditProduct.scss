@@ -7,21 +7,20 @@
   background-color: $coffee-white;
   color: $coffee-grey900;
   padding: 0 1rem;
+  @include tablet{
+    padding: 0 2.5rem;
+  }
+  @include desktop{
+    width: 85%;
+    margin-left: 15%;
+    padding: 0 8.125rem;
+  }
   &__headingcontainer {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      margin: 1.5rem 0 0 0;
-
-      @include tablet {
-        justify-content: flex-start;
-        padding: 3.2rem 0 2.1rem 3.6rem;
-      }
-  
-      @include desktop {
-        padding: 3.2rem 0 2.1rem 4.4rem;
-      }
-    }
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+  }
   
   &__header {
     @include page-header-mobile;
@@ -41,6 +40,7 @@
     @include tablet {
       width: 100%;
       display: flex;
+      justify-content: space-between;
       margin: 2.4rem 0;
     }
 
@@ -50,12 +50,17 @@
     flex-direction: column;
 
     @include tablet {
-      width: 100%;
+      width: 50%;
       border: none;
     }
-
-    @include desktop {
-      padding: 0 4rem;
+    @include desktop{
+      width: 45%;
+    }
+  }
+  &__bottomform{
+  @include tablet {
+      width: 45%;
+      border: none;
     }
   }
   &__subheading {
@@ -63,7 +68,7 @@
     margin: 1.6rem 0 2.4rem 0;
 
     @include tablet {
-      margin: 2.4rem 0 3.2rem 0;
+      margin: 0 0 2rem 0;
     }
   }
   &__label {
@@ -164,6 +169,9 @@
       background: url('../../assets/icons/arrow-down.svg');
       background-size: contain;
       background-repeat: no-repeat;
+      @include tablet {
+        top: 2.25rem;
+      }
     }
   }
 
@@ -176,6 +184,9 @@
     background: url("../../assets/icons/dollar.svg");
     background-size: contain;
     background-repeat: no-repeat;
+    @include tablet{
+      top: 2.5rem;
+    }
   }
 
   &__buttons {
@@ -186,9 +197,6 @@
     margin-bottom: 2rem;
     @include tablet {
       justify-content: flex-end;
-    }
-    @include desktop {
-
     }
   }
 

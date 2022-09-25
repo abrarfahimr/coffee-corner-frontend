@@ -13,12 +13,11 @@
   @include desktop {
     width: 85%;
     margin-left: 15%;
-    padding: 1.5rem 60px;
+    padding: 1.5rem 8.125rem;
   }
 
   &__top {
     width: 100%;
-
     @include tablet {
       @include flex-spaced-center;
       margin: 2rem 0 4rem 0;

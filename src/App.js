@@ -9,6 +9,7 @@ import TransactionPage from './pages/TransactionPage/TransactionPage';
 import CustomerPage from './pages/CustomerPage/CustomerPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import AddProduct from './components/AddProduct/AddProduct';
 import EditProduct from './components/EditProduct/EditProduct';
 import NavBar from './components/NavBar/NavBar';
 
@@ -32,7 +33,8 @@ function App() {
           <Route path="/sales" element={<SalesPage />} />
           <Route path="/products" element={<ProductPage />} />
           <Route path="/products/:id" element={<ProductDetails/>}/>
-          <Route path='/products/:id/edit' element={<EditProduct/>}/>
+          <Route path='/products/:id/edit' element={<EditProduct />} />
+          <Route path='/products/add' element={<AddProduct/>}/>
           <Route path="/transaction" element={<TransactionPage />} />
           <Route path="/customer" element={<CustomerPage/> }/>
           <Route path='*' element={<ErrorPage/> } />

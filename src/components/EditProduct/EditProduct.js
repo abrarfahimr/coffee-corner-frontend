@@ -127,7 +127,7 @@ const EditProduct = () => {
   };
 
   const isUploadValid = () => {
-    if (price === '' || price === 0) {
+    if (price === '') {
       return false;
     }
     return true;
@@ -136,7 +136,7 @@ const EditProduct = () => {
   //check to see if all forms are valid
   const isFormValid = () => {
     //Check if the fields are all filled
-    if (!name || !description || !roast || !type || !body || !acidity || price || !stock) {
+    if (!name || !description || !roast || !type || !body || !acidity || !price || !stock) {
       return false;
     }
     //Check if the name field is valid
@@ -174,7 +174,7 @@ const EditProduct = () => {
     event.preventDefault();
     if (isFormValid()) {
       axios
-        .put(`${API_URL}inventory/${currentId}`, {
+        .put(`${API_URL}/products/${currentId}`, {
           product_name: name,
           description: description,
           roast: roast,
@@ -186,7 +186,7 @@ const EditProduct = () => {
           image: upload
         })
         .then((response) => console.log(response.data));
-      alert('Inventory updated!');
+      alert('Product Updated!');
       navigate(`/products/${currentId}`);
     } else {
       alert('Please fill up all inputs');
@@ -229,7 +229,11 @@ const EditProduct = () => {
           />
           <h1 className="editproduct__header">Edit Product</h1>
         </div>
-        <form className="editproduct__form" onSubmit={submitForm}>
+        <form
+          className="editproduct__form"
+          onSubmit={submitForm}
+          enctype="multipart/form-data"
+        >
           <div className="editproduct__formcontainer">
             <div className="editproduct__topform">
               <h2 className="editproduct__subheading">Product Details</h2>
@@ -376,7 +380,7 @@ const EditProduct = () => {
                   className={`editproduct__stock ${
                     isStockValid() ? '' : ' editproduct__stock--error'
                   }`}
-                  htmlFor="productStock"
+                  name="productStock"
                   type="number"
                   placeholder="Type a number"
                   value={stock}
@@ -393,7 +397,7 @@ const EditProduct = () => {
                   className={`editproduct__price ${
                     isPriceValid() ? '' : ' editproduct__price--error'
                   }`}
-                  htmlFor="productPrice"
+                  name="productPrice"
                   type="number"
                   placeholder="Type a price"
                   value={price}
@@ -411,7 +415,7 @@ const EditProduct = () => {
                   className={`editproduct__upload ${
                     isUploadValid() ? '' : ' editproduct__upload--error'
                   }`}
-                  htmlFor="productUpload"
+                  name="productUpload"
                   type="file"
                   accept="image/png, image/jpeg"
                   onChange={handleChangeUpload}
@@ -428,7 +432,7 @@ const EditProduct = () => {
                 <button
                   input="submit"
                   className="editproduct__save"
-                  value="submit"
+                  value="save"
                 >
                   Save
                 </button>

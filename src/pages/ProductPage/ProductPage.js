@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import ProductList from '../../components/ProductList/ProductList';
+import { Link } from 'react-router-dom';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -29,9 +30,9 @@ const ProductPage = () => {
               placeholder="Search..."
             />
           </form>
-          <button className="products__addbutton">
+          <Link to={`/products/add`} className="products__addbutton">
             + Add Product
-          </button>
+          </Link>
         </div>
       </div>
       <div className="products__column">
@@ -61,12 +62,7 @@ const ProductPage = () => {
         </div>
       </div>
       {products.map((product) => {
-        return (
-          <ProductList
-            product={product}
-            key={uuidv4()}
-          />
-        );
+        return <ProductList product={product} key={uuidv4()} />;
       })}
     </section>
   );
