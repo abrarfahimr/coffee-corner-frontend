@@ -49,7 +49,7 @@ const ProductPage = () => {
             <h3 className="products__titlestock">Current Stock</h3>
           </div>
           <div className="products__price">
-            <h3 className="products__titleprice">Price per item</h3>
+            <h3 className="products__titleprice">Price Per Bag</h3>
           </div>
         </div>
         <div className="products__thirdlist">

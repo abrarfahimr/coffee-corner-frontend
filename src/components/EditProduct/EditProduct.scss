@@ -233,7 +233,7 @@
   }
 
   ::-webkit-input-placeholder {
-    @include body-mobile;
+    @include label-mobile;
   }
 }
 

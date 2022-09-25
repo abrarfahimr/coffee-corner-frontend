@@ -1,0 +1,276 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.addproduct {
+  background-color: $coffee-white;
+  color: $coffee-grey900;
+  padding: 0 1rem;
+
+  @include tablet {
+    padding: 0 2.5rem;
+  }
+
+  @include desktop {
+    width: 85%;
+    margin-left: 15%;
+    padding: 0 8.125rem;
+  }
+
+  &__headingcontainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+  }
+
+  &__header {
+    @include page-header-mobile;
+    margin: 0 0 0 1.2rem;
+  }
+
+  &__navicon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__formcontainer {
+    @include tablet {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin: 2.4rem 0;
+    }
+
+  }
+
+  &__topform {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      width: 50%;
+      border: none;
+    }
+
+    @include desktop {
+      width: 45%;
+    }
+  }
+
+  &__bottomform {
+    @include tablet {
+      width: 45%;
+      border: none;
+    }
+  }
+
+  &__subheading {
+    @include subheader-mobile;
+    margin: 1.6rem 0 2.4rem 0;
+
+    @include tablet {
+      margin: 0 0 2rem 0;
+    }
+  }
+
+  &__label {
+    @include label-mobile;
+    margin-bottom: 0.4rem;
+  }
+
+  &__name,
+  &__description,
+  &__roast {
+    @include inputField;
+  }
+
+  &__name {
+    &--error {
+      @extend .addproduct__name;
+      @include errorBorder;
+    }
+  }
+
+  &__description {
+    min-height: 12rem;
+    resize: none;
+    font-family: Poppins;
+
+    &--error {
+      @extend .addproduct__description;
+      @include errorBorder;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__roast {
+    appearance: none;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins';
+    @include label-mobile;
+    color: $coffee-grey900;
+
+    &--error {
+      @extend .addproduct__roast;
+      @include errorBorder;
+    }
+  }
+
+  &__type {
+    @extend .addproduct__roast;
+
+    &--error {
+      @extend .addproduct__roast;
+      @include errorBorder;
+    }
+  }
+
+  &__body {
+    @extend .addproduct__roast;
+
+    &--error {
+      @extend .addproduct__roast;
+      @include errorBorder;
+    }
+  }
+
+  &__acidity {
+    @extend .addproduct__roast;
+
+    &--error {
+      @extend .addproduct__roast;
+      @include errorBorder;
+    }
+  }
+
+  &__stock {
+    @extend .addproduct__roast;
+
+    &--error {
+      @extend .addproduct__roast;
+      @include errorBorder;
+    }
+  }
+
+  &__id{
+    @extend .addproduct__stock;
+  }
+
+  &__price {
+    @extend .addproduct__roast;
+    padding: 0.8rem 1.6rem 0.8rem 2.5rem;
+
+    &--error {
+      @extend .addproduct__roast;
+      @include errorBorder;
+    }
+  }
+
+  &__downarrow {
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      position: absolute;
+      height: 100%;
+      width: 1.5rem;
+      top: 2rem;
+      right: 1rem;
+      content: "";
+      background: url('../../assets/icons/arrow-down.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include tablet {
+        top: 2.25rem;
+      }
+    }
+  }
+
+  &__dollar {
+    position: absolute;
+    width: 1rem;
+    height: 100%;
+    top: 2.25rem;
+    left: 1rem;
+    background: url("../../assets/icons/dollar.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      top: 2.5rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__cancel {
+    @include secondaryBtn;
+    @include body-mobile;
+    max-width: 45%;
+    margin-right: 1rem;
+    border-radius: 1.25rem;
+
+    &:hover {
+      transition-duration: 0.2s;
+      background-color: $coffee-grey200;
+    }
+  }
+
+  &__upload {
+    padding: 0 0 1rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  &__save {
+    max-width: 45%;
+    @include buttonStyle;
+    @include body-mobile;
+    padding: 0.5rem 2rem;
+    margin: 0;
+    background-color: $coffee-blue;
+    color: $coffee-white;
+    border-radius: 1.25rem;
+
+    &:hover {
+      transition-duration: 0.2s;
+      background-color: $coffee-darkblue;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    @include label-mobile;
+  }
+}
+
+input[type="file"]::file-selector-button {
+  font-family: 'Poppins';
+  background-color: $coffee-blue;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  color: $coffee-white;
+  margin-right: 0.5rem;
+}

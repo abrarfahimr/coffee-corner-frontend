@@ -13,6 +13,8 @@ const EditProduct = () => {
   const navigate = useNavigate();
   let { id } = useParams();
 
+  let currentId = id;
+
   //setting states for individual inputs
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -194,7 +196,6 @@ const EditProduct = () => {
   };
 
   //make get request with axios
-  let currentId = id;
   useEffect(() => {
     axios
       .get(`${API_URL}/products/${currentId}`)
@@ -232,7 +233,7 @@ const EditProduct = () => {
         <form
           className="editproduct__form"
           onSubmit={submitForm}
-          enctype="multipart/form-data"
+          encType="multipart/form-data"
         >
           <div className="editproduct__formcontainer">
             <div className="editproduct__topform">
@@ -281,6 +282,18 @@ const EditProduct = () => {
                 value={description}
                 onChange={handleChangeDescription}
               ></textarea>
+              <p
+                className={`validation ${
+                  isDescriptionValid() ? '' : ' validation--active'
+                }`}
+              >
+                <img
+                  src={errorIcon}
+                  alt="error icon"
+                  className="validation__icon"
+                ></img>
+                This field is required
+              </p>
 
               {/* Roast */}
               <div className="editproduct__container">
@@ -301,6 +314,18 @@ const EditProduct = () => {
                   <option value="Dark">Dark</option>
                 </select>
                 <span className="editproduct__downarrow"></span>
+                <p
+                  className={`validation ${
+                    isRoastValid() ? '' : ' validation--active'
+                  }`}
+                >
+                  <img
+                    src={errorIcon}
+                    alt="error icon"
+                    className="validation__icon"
+                  ></img>
+                  This field is required
+                </p>
               </div>
 
               {/* Type */}
@@ -322,6 +347,18 @@ const EditProduct = () => {
                   <option value="Robusta">Robusta</option>
                 </select>
                 <span className="editproduct__downarrow"></span>
+                <p
+                  className={`validation ${
+                    isTypeValid() ? '' : ' validation--active'
+                  }`}
+                >
+                  <img
+                    src={errorIcon}
+                    alt="error icon"
+                    className="validation__icon"
+                  ></img>
+                  This field is required
+                </p>
               </div>
 
               {/* body */}
@@ -345,6 +382,18 @@ const EditProduct = () => {
                   <option value="5">5</option>
                 </select>
                 <span className="editproduct__downarrow"></span>
+                <p
+                  className={`validation ${
+                    isBodyValid() ? '' : ' validation--active'
+                  }`}
+                >
+                  <img
+                    src={errorIcon}
+                    alt="error icon"
+                    className="validation__icon"
+                  ></img>
+                  This field is required
+                </p>
               </div>
 
               {/* Acidity */}
@@ -368,6 +417,18 @@ const EditProduct = () => {
                   <option value="5">5</option>
                 </select>
                 <span className="editproduct__downarrow"></span>
+                <p
+                  className={`validation ${
+                    isAcidityValid() ? '' : ' validation--active'
+                  }`}
+                >
+                  <img
+                    src={errorIcon}
+                    alt="error icon"
+                    className="validation__icon"
+                  ></img>
+                  This field is required
+                </p>
               </div>
             </div>
             <div className="editproduct__bottomform">
@@ -382,10 +443,22 @@ const EditProduct = () => {
                   }`}
                   name="productStock"
                   type="number"
-                  placeholder="Type a number"
+                  placeholder="Type the quantity of stock"
                   value={stock}
                   onChange={handleChangeStock}
                 ></input>
+                <p
+                  className={`validation ${
+                    isStockValid() ? '' : ' validation--active'
+                  }`}
+                >
+                  <img
+                    src={errorIcon}
+                    alt="error icon"
+                    className="validation__icon"
+                  ></img>
+                  This field is required
+                </p>
               </div>
 
               {/* Price */}
@@ -404,6 +477,18 @@ const EditProduct = () => {
                   onChange={handleChangePrice}
                 ></input>
                 <span className="editproduct__dollar"></span>
+                <p
+                  className={`validation ${
+                    isPriceValid() ? '' : ' validation--active'
+                  }`}
+                >
+                  <img
+                    src={errorIcon}
+                    alt="error icon"
+                    className="validation__icon"
+                  ></img>
+                  This field is required
+                </p>
               </div>
 
               {/* Upload */}
