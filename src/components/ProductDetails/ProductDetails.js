@@ -1,15 +1,26 @@
 import './ProductDetails.scss';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import editIcon from '../../assets/icons/edit.svg';
-import deleteIcon from '../../assets/icons/delete.svg'
+import deleteIcon from '../../assets/icons/delete.svg';
+import arrowLeftIcon from '../../assets/icons/arrow-left.svg';
+import ProductModal from '../Modal/ProductModal';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 const ProductDetails = () => {
-  const [product, setProduct] = useState([])
+  const [product, setProduct] = useState([]);
+
+  //setting state for modal 
+  const [openModal, setOpenModal] = useState(false);
+  const showModal = () => {
+    setOpenModal(prev => !prev);
+  };
+
+  const navigate = useNavigate();
+
   let { id } = useParams();
 
   //make get request with axios
@@ -18,15 +29,26 @@ const ProductDetails = () => {
     axios
       .get(`${API_URL}/products/${currentId}`)
       .then((response) => {
-        setProduct(response.data)
+        setProduct(response.data);
       })
       .catch((err) => console.log(err));
   }, [currentId]);
+
+  //return back when you cancel edit inventory
+  const returnBack = () => {
+    navigate(-1);
+  };
 
   return (
     <div className="details__wrapper">
       <div className="details">
         <div className="details__imagecontainer">
+          <img
+            src={arrowLeftIcon}
+            alt="left arrow"
+            onClick={returnBack}
+            className="editproduct__navicon"
+          />
           <img
             className="details__image"
             src={product.image}
@@ -79,6 +101,12 @@ const ProductDetails = () => {
             </div>
           </div>
           <div className="details__buttons">
+            <ProductModal
+              openModal={openModal}
+              setOpenModal={setOpenModal}
+              productId={product.id}
+              productName={product.product_name}
+            />
             <Link
               to={`/products/${currentId}/edit`}
               className="details__button"
@@ -86,7 +114,7 @@ const ProductDetails = () => {
               <img src={editIcon} alt="edit icon" className="details__icon" />{' '}
               Edit
             </Link>
-            <button className="details__delete">
+            <button className="details__delete" onClick={showModal}>
               <img
                 src={deleteIcon}
                 alt="delete icon"
