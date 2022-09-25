@@ -8,7 +8,6 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 const TransactionPage = () => {
   const [transactions, setTransaction] = useState([]);
-  const [alterClass, setAlterClass] = useState("");
 
   useEffect(() => {
     const url = `${API_URL}/transactions`;
@@ -65,8 +64,6 @@ const TransactionPage = () => {
           <TransactionList
             transaction={transaction}
             key={uuidv4()}
-            alterClass={alterClass}
-            setAlterClass={setAlterClass}
           />
         );
       })}

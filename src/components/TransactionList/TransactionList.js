@@ -1,25 +1,20 @@
 import { useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-const TransactionList = ({ transaction, alterClass, setAlterClass }) => {
+const TransactionList = ({transaction}) => {
 
   const allProducts = transaction.products.split("-");
 
-  const changeClassName = () => {
+  const changeClassName = (status) => {
     if (transaction.status === 'Pending') {
-      setAlterClass('transactions__statusbar--pending');
-      return alterClass;
+      return 'transactions__statusbar--pending';
     } else if (transaction.status === 'Shipped') {
-      setAlterClass('transactions__statusbar--shipped');
-      return alterClass;
+      return 'transactions__statusbar--shipped';
     } else if (transaction.status === 'Delivered') {
-      setAlterClass('transactions__statusbar--delivered');
-      return alterClass;
+      return 'transactions__statusbar--delivered';
     } else if (transaction.status === 'Cancelled') {
-      setAlterClass('transactions__statusbar--cancelled');
-      return alterClass;
+      return 'transactions__statusbar--cancelled';
     }
-    return alterClass;
   };
 
   useEffect(() => {
@@ -67,7 +62,7 @@ const TransactionList = ({ transaction, alterClass, setAlterClass }) => {
       <div className="transactions__fourthlist">
         <div className="transactions__status">
           <h3 className="transactions__statustitle">Status</h3>
-          <p className={alterClass}>{transaction.status}</p>
+          <p className={changeClassName(transaction.status)}>{transaction.status}</p>
         </div>
       </div>
     </div>
