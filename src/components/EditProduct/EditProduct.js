@@ -126,6 +126,13 @@ const EditProduct = () => {
     return true;
   };
 
+  const isUploadValid = () => {
+    if (price === '' || price === 0) {
+      return false;
+    }
+    return true;
+  };
+
   //check to see if all forms are valid
   const isFormValid = () => {
     //Check if the fields are all filled
@@ -222,7 +229,7 @@ const EditProduct = () => {
           />
           <h1 className="editproduct__header">Edit Product</h1>
         </div>
-        <form className="editproduct__form">
+        <form className="editproduct__form" onSubmit={submitForm}>
           <div className="editproduct__formcontainer">
             <div className="editproduct__topform">
               <h2 className="editproduct__subheading">Product Details</h2>
@@ -240,14 +247,18 @@ const EditProduct = () => {
                 value={name}
                 onChange={handleChangeName}
               ></input>
-              {/* <p className={`error${isNameValid() ? '' : ' error--active'}`}>
+              <p
+                className={`validation ${
+                  isNameValid() ? '' : ' validation--active'
+                }`}
+              >
                 <img
                   src={errorIcon}
                   alt="error icon"
-                  className="error__icon"
+                  className="validation__icon"
                 ></img>
                 This field is required
-              </p> */}
+              </p>
 
               {/* Description */}
               <label
@@ -390,6 +401,23 @@ const EditProduct = () => {
                 ></input>
                 <span className="editproduct__dollar"></span>
               </div>
+
+              {/* Upload */}
+              <div className="editproduct__container">
+                <label htmlFor="productUpload" className="editproduct__label">
+                  Image
+                </label>
+                <input
+                  className={`editproduct__upload ${
+                    isUploadValid() ? '' : ' editproduct__upload--error'
+                  }`}
+                  htmlFor="productUpload"
+                  type="file"
+                  accept="image/png, image/jpeg"
+                  onChange={handleChangeUpload}
+                ></input>
+              </div>
+
               <div className="editproduct__buttons">
                 <NavLink
                   to={`/products/${currentId}`}

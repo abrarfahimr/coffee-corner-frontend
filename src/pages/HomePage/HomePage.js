@@ -15,15 +15,15 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 const HomePage = () => {
 
-  const [products, setProduct] = useState([]);
+  // const [products, setProduct] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get(`${API_URL}/products`)
-      .then(response => {
-        setProduct(response.data)
-      })
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${API_URL}/products`)
+  //     .then(response => {
+  //       setProduct(response.data)
+  //     })
+  // }, []);
 
   return (
     <main className="homepage">
