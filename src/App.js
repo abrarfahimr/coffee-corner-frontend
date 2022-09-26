@@ -7,6 +7,7 @@ import SalesPage from './pages/SalesPage/SalesPage';
 import ProductPage from './pages/ProductPage/ProductPage';
 import TransactionPage from './pages/TransactionPage/TransactionPage';
 import CustomerPage from './pages/CustomerPage/CustomerPage';
+import MarketingPage from './pages/MarketingPage/MarketingPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import AddProduct from './components/AddProduct/AddProduct';
@@ -34,7 +35,8 @@ function App() {
           <Route path="/products" element={<ProductPage />} />
           <Route path="/products/:id" element={<ProductDetails/>}/>
           <Route path='/products/:id/edit' element={<EditProduct />} />
-          <Route path='/products/add' element={<AddProduct/>}/>
+          <Route path='/products/add' element={<AddProduct />} />
+          <Route path='/marketing' element={<MarketingPage/>}/>
           <Route path="/transaction" element={<TransactionPage />} />
           <Route path="/customer" element={<CustomerPage/> }/>
           <Route path='*' element={<ErrorPage/> } />

@@ -1,0 +1,132 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+.marketing{
+  padding: 1.5rem 1rem 0 1rem;
+  @include desktop{
+    width: 85%;
+    margin-left: 15%;
+  }
+  &__overview {
+    @include desktop {
+      width: 55%;
+    }
+  }
+
+  &__cards {
+    @include flex-center-center;
+    flex-wrap: wrap;
+
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+
+    @include desktop {
+      justify-content: flex-start;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    padding: 1.5rem;
+    @include border;
+    margin: 0 1rem 1rem 0;
+  }
+
+  &__cardtitle {
+    @include page-nav-mobile;
+    font-weight: 400;
+    margin: 0.25rem 0;
+
+    @include tablet {
+      font-weight: 400;
+    }
+
+    @include desktop {
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      font-weight: 400;
+    }
+  }
+
+  &__amount {
+    @include page-header-mobile;
+    margin: 0.25rem 0;
+
+    @include tablet {
+      font-weight: 600;
+    }
+
+    @include desktop {
+      font-size: 1rem;
+      line-height: 1.125rem;
+      font-weight: 600;
+    }
+  }
+  &__increase {
+    @include subheader-mobile;
+    font-weight: 400;
+    margin: 0.25rem 0;
+    color: $coffee-darkyellow;
+
+    @include desktop {
+      font-size: 0.6875rem;
+      font-weight: 600;
+    }
+  }
+  &__heading{
+    @include page-header-mobile;
+    margin: 1.5rem 0 1rem 0;
+  }
+  &__subheading{
+    @include page-header-mobile;
+    margin: 1rem 0 0.5rem 0
+  }
+  &__paragraph{
+    @include body-mobile;
+    margin: 0 0 1rem 0;
+  }
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  &__label{
+    @include label-mobile;
+    margin-bottom: 0.4rem;
+  }
+  &__select{
+    @include inputField;
+    appearance: none;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins';
+    @include label-mobile;
+    color: $coffee-grey900;
+  }
+  &__downarrow {
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      position: absolute;
+      height: 100%;
+      width: 1.5rem;
+      top: 2rem;
+      right: 1rem;
+      content: "";
+      background: url('../../assets/icons/arrow-down.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include tablet {
+        top: 2.25rem;
+      }
+    }
+  }
+}
