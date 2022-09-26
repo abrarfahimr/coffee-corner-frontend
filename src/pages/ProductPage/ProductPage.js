@@ -9,6 +9,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     const url = `${API_URL}/products`;
@@ -18,6 +19,10 @@ const ProductPage = () => {
       })
   }, []);
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    setSearch(event.target.value);
+  }
   return (
     <section className="products">
       <div className="products__top">
@@ -28,6 +33,7 @@ const ProductPage = () => {
               className="products__search"
               type={'search'}
               placeholder="Search..."
+              onChange={handleSearch}
             />
           </form>
           <Link to={`/products/add`} className="products__addbutton">
@@ -61,7 +67,20 @@ const ProductPage = () => {
           <h3 className="products__titleaction">Action</h3>
         </div>
       </div>
-      {products.map((product) => {
+      {/* Search functionality */}
+      {products.filter((input) => {
+        if (search === ""){
+          return input
+        } else if (
+          //search by typing name, id, or price
+          input.product_name.toLowerCase().includes(search.toLocaleLowerCase())
+          || input.product_id.toLowerCase().includes(search.toLocaleLowerCase())
+          || input.price.toLowerCase().includes(search.toLocaleLowerCase())) {
+          return input;
+          }
+        return false;
+      })
+       .map((product) => {
         return <ProductList product={product} key={uuidv4()} />;
       })}
     </section>
