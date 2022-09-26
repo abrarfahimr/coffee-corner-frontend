@@ -8,23 +8,14 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import { ChartData } from './ChartData/ChartData';
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 2780,
-    pv: 3908,
-    zv: 2000,
-  },
-  {
-    name: 'Page B',
-    uv: 3490,
-    pv: 4300,
-    zv: 2100,
-  },
-];
-
-const RevenueBarChart = () => {
+const RevenueBarChart = ({projectA, projectB}) => {
+  let data = [];
+  const graphdata = ChartData[0].revenue;
+  const DataSetA = graphdata.find((graph) => graph.campaign === projectA);
+  const DataSetB = graphdata.find((graph) => graph.campaign === projectB);
+  data.push(DataSetA, DataSetB);
   return (
     <ResponsiveContainer width="99%" aspect={1}>
       <BarChart
@@ -37,13 +28,13 @@ const RevenueBarChart = () => {
         }}
       >
         <CartesianGrid strokeOpacity={0.4} />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="campaign" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" stackId="a" fill="#FE9399" />
-        <Bar dataKey="uv" stackId="a" fill="#FFE7B8" />
-        <Bar dataKey="zv" stackId="a" fill="#BCE8E1" />
+        <Bar dataKey="twitter" stackId="a" fill="#FE9399" />
+        <Bar dataKey="facebook" stackId="a" fill="#FFE7B8" />
+        <Bar dataKey="googleAds" stackId="a" fill="#BCE8E1" />
       </BarChart>
     </ResponsiveContainer>
   );

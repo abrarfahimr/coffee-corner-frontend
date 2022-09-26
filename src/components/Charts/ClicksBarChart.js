@@ -8,23 +8,17 @@ import {
   Legend,
   ResponsiveContainer
 } from 'recharts';
+import { ChartData } from './ChartData/ChartData';
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    zv: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    zv: 2210,
-  }
-];
 
-const ClicksBarChart = () => {
+const ClicksBarChart = ({ projectA, projectB }) => {
+  
+  let data = [];
+  const graphdata = ChartData[0].clicks;
+  const DataSetA = graphdata.find((graph) => graph.campaign === projectA);
+  const DataSetB = graphdata.find((graph) => graph.campaign === projectB);
+  data.push(DataSetA, DataSetB);
+
   return (
     <ResponsiveContainer width="99%" aspect={1}>
       <BarChart
@@ -37,16 +31,16 @@ const ClicksBarChart = () => {
         }}
       >
         <CartesianGrid strokeOpacity={0.4} />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="campaign" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" stackId="a" fill="#FE9399" />
-        <Bar dataKey="uv" stackId="a" fill="#FFE7B8" />
-        <Bar dataKey="zv" stackId="a" fill="#BCE8E1" />
+        <Bar dataKey="twitter" stackId="a" fill="#FE9399" />
+        <Bar dataKey="facebook" stackId="a" fill="#FFE7B8" />
+        <Bar dataKey="googleAds" stackId="a" fill="#BCE8E1" />
       </BarChart>
     </ResponsiveContainer>
   );
-}
+};
 
 export default ClicksBarChart
