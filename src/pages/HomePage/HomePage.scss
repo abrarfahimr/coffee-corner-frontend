@@ -117,8 +117,15 @@
     @include flex-spaced-center;
     padding: 0.5rem 0;
     border-bottom: 1px solid $coffee-grey300;
+    text-decoration: none;
+    color: $coffee-grey900;
     @include tablet{
       padding: 0.5rem 1.5rem;
+    }
+    &:hover{
+      cursor: pointer;
+      transition-duration: 0.2s;
+      background-color: $coffee-grey200;
     }
   }
   &__coffee{
@@ -161,6 +168,7 @@
       width: 100%;
       flex-wrap: nowrap;
       justify-content: space-between;
+      margin-top: 2rem;
     }
   }
   &__leftstates{

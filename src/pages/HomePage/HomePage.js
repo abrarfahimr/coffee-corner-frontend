@@ -2,28 +2,23 @@ import './HomePage.scss';
 import GraphChart from '../../components/Charts/BarChart';
 import UserChart from '../../components/Charts/userChart';
 import PieChartGraph from '../../components/Charts/PieChart';
-import coffeeImage1 from '../../assets/images/image01.png';
-import coffeeImage2 from '../../assets/images/image02.png';
-import coffeeImage3 from '../../assets/images/image03.png';
-import coffeeImage4 from '../../assets/images/image04.png';
-import coffeeImage5 from '../../assets/images/image05.png';
-import coffeeImage6 from '../../assets/images/image06.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-router-dom';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 const HomePage = () => {
+  const [products, setProduct] = useState([]);
 
-  // const [products, setProduct] = useState([]);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${API_URL}/products`)
-  //     .then(response => {
-  //       setProduct(response.data)
-  //     })
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/products`)
+      .then(response => {
+        setProduct(response.data)
+      })
+  }, []);
 
   return (
     <main className="homepage">
@@ -58,48 +53,28 @@ const HomePage = () => {
         <div className="homepage__producttable">
           <div className="homepage__products">
             <h2 className="homepage__title">Top Products</h2>
-            <div className="homepage__productlist">
-              <div className="homepage__coffee">
-                <img src={coffeeImage1} alt="" className="homepage__image" />
-                <p className="homepage__name">Lava Coffee</p>
-              </div>
-              <p className="homepage__price">$540</p>
-            </div>
-            <div className="homepage__productlist">
-              <div className="homepage__coffee">
-                <img src={coffeeImage2} alt="" className="homepage__image" />
-                <p className="homepage__name">Egoest Latte</p>
-              </div>
-              <p className="homepage__price">$429</p>
-            </div>
-            <div className="homepage__productlist">
-              <div className="homepage__coffee">
-                <img src={coffeeImage3} alt="" className="homepage__image" />
-                <p className="homepage__name">VintageBee Coffee</p>
-              </div>
-              <p className="homepage__price">$346</p>
-            </div>
-            <div className="homepage__productlist">
-              <div className="homepage__coffee">
-                <img src={coffeeImage4} alt="" className="homepage__image" />
-                <p className="homepage__name">Ancient twist kava</p>
-              </div>
-              <p className="homepage__price">$274</p>
-            </div>
-            <div className="homepage__productlist">
-              <div className="homepage__coffee">
-                <img src={coffeeImage5} alt="" className="homepage__image" />
-                <p className="homepage__name">Beaneriffic</p>
-              </div>
-              <p className="homepage__price">$224</p>
-            </div>
-            <div className="homepage__productlist">
-              <div className="homepage__coffee">
-                <img src={coffeeImage6} alt="" className="homepage__image" />
-                <p className="homepage__name">Missile Brew</p>
-              </div>
-              <p className="homepage__price">$180</p>
-            </div>
+            {
+              products && products
+                .sort((a, b) => (a.price * a.sales) > (b.price * b.sales) ? -1 : 1)
+                .slice(0, 7)
+                .map((product) => {
+                  return (
+                    <Link  to={`/products/${product.id}`} className="homepage__productlist" key={uuidv4()}>
+                      <div className="homepage__coffee">
+                        <img
+                          src={product.image}
+                          alt="coffee bag"
+                          className="homepage__image"
+                        />
+                        <p className="homepage__name">{product.product_name}</p>
+                      </div>
+                      <p className="homepage__price">
+                        ${product.price * product.sales}
+                      </p>
+                    </Link>
+                  );
+                }) 
+            }
           </div>
         </div>
       </div>
