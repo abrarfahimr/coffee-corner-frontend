@@ -76,18 +76,22 @@ const MarketingPage = () => {
           </div>
         </form>
         <div className="marketing__graph">
-          <CampaignChart />
-        </div>
-        <div className="marketing__barcharts">
-          <div className="marketing__clicks">
-            <h2 className="marketing__subheading">Clicks</h2>
-            <p className="marketing__paragraph">Total by month</p>
-            <ClicksBarChart />
+          <div className="marketing__linechart">
+            <CampaignChart />
           </div>
-          <div className="marketing__revenue">
-            <h2 className="marketing__subheading">Revenue</h2>
-            <p className="marketing__paragraph">Total by month</p>
-            <RevenueBarChart />
+        </div>
+        <div className='marketing__chartcontainer'>
+          <div className="marketing__barcharts">
+            <div className="marketing__clicks">
+              <h2 className="marketing__subheading">Clicks</h2>
+              <p className="marketing__paragraph">Total by month</p>
+              <ClicksBarChart />
+            </div>
+            <div className="marketing__revenue">
+              <h2 className="marketing__subheading">Revenue</h2>
+              <p className="marketing__paragraph">Total by month</p>
+              <RevenueBarChart />
+            </div>
           </div>
         </div>
       </div>
