@@ -11,6 +11,7 @@ const NavBar = ({ sideBar }) => {
       <Link to="/home">
         <img src={logo} alt="logo" className="navbar__logo"></img>
       </Link>
+      {/* map out the nav bar data and use NavLink to send to appropriate pages */}
       {NavBarData.map((data) => {
         return (
           <div className="navbar__links" key={uuidv4()}>
@@ -21,6 +22,7 @@ const NavBar = ({ sideBar }) => {
           </div>
         );
       })}
+      {/* logout component to log out of the website */}
         <Logout/>
     </nav>
   );

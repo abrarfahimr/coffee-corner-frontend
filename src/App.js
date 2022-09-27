@@ -23,17 +23,19 @@ function App() {
   const toggleSideBar = () => {
     setSideBar((prevState) => !prevState);
   };
-
+  // destructuring elements from "useAuth0" component from auth0 library
   const { isLoading, isAuthenticated, error, user, logout } =
     useAuth0();
-
+  //This is show when data is being fetched
   if (isLoading) {
     return <div>Loading...</div>;
   }
+  //Error message when login fails
   if (error) {
     return <div>Oops... {error.message}</div>;
   }
 
+  //when autheticated the webpage is shown if not logged in user goes to the login page.
   if (isAuthenticated) {
     return (
       <div className="App">

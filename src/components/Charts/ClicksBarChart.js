@@ -12,7 +12,7 @@ import { ChartData } from './ChartData/ChartData';
 
 
 const ClicksBarChart = ({ projectA, projectB }) => {
-  
+  //grab the data that is the same as the select field and push them to an empty array to be parsed on the graph. This is so we dont parse all the data but the ones we want.
   let data = [];
   const graphdata = ChartData[0].clicks;
   const DataSetA = graphdata.find((graph) => graph.campaign === projectA);
@@ -20,6 +20,7 @@ const ClicksBarChart = ({ projectA, projectB }) => {
   data.push(DataSetA, DataSetB);
 
   return (
+    // responsive container changes the chart depending on the size of it's container
     <ResponsiveContainer width="99%" aspect={1}>
       <BarChart
         width={500}

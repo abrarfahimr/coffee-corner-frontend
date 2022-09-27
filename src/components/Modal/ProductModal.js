@@ -8,7 +8,8 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 const ProductModal = ({ openModal, setOpenModal, productId, productName, }) => {
   const navigate = useNavigate();
-
+  
+  //set variable to useRef
    const modalRef = useRef();
    const closeModal = (e) => {
      if (modalRef.current === e.target) {
@@ -16,6 +17,7 @@ const ProductModal = ({ openModal, setOpenModal, productId, productName, }) => {
      }
    };
   
+  //handle delete for product
   const deleteHandler = () => {
     axios
       .delete(`${API_URL}/products/${productId}`)
@@ -37,6 +39,7 @@ const ProductModal = ({ openModal, setOpenModal, productId, productName, }) => {
                 className="modal__exit"
                 src={exit}
                 alt={exit}
+                // click to open modal
                 onClick={() => {
                   setOpenModal();
                 }}
@@ -52,6 +55,7 @@ const ProductModal = ({ openModal, setOpenModal, productId, productName, }) => {
             <div className="modal__bottom">
               <button
                 className="modal__cancel"
+                // change state of to open and close the modal
                 onClick={() => {
                   setOpenModal((prev) => !prev);
                 }}

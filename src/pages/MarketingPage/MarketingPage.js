@@ -7,22 +7,25 @@ import { ChartData } from '../../components/Charts/ChartData/ChartData';
 import { v4 as uuidv4 } from 'uuid';
 
 const MarketingPage = () => {
+  //set state for entire graph data and both select fields.
   const [graphdata, setGraphData] = useState([]);
-  const [projectA, setProjectA] = useState("");
-  const [projectB, setProjectB] = useState("");
+  const [projectA, setProjectA] = useState('');
+  const [projectB, setProjectB] = useState('');
 
   useEffect(() => {
     const Data = ChartData[0].campaign;
     setGraphData(Data);
-  },[])
-  
+  }, []);
+
+  //handle change for first select field
   const handleChangeA = (event) => {
     setProjectA(event.target.value);
-  }
+  };
 
+  //handle change for second select field
   const handleChangeB = (event) => {
     setProjectB(event.target.value);
-  }
+  };
 
   return (
     <div className="marketing">
@@ -59,6 +62,7 @@ const MarketingPage = () => {
               onChange={handleChangeA}
             >
               <option value=""> Please select an option</option>
+              {/* map out all the options for select field */}
               {graphdata.map((element) => {
                 return (
                   <option value={element.codename} key={uuidv4()}>
@@ -80,6 +84,7 @@ const MarketingPage = () => {
               onChange={handleChangeB}
             >
               <option value=""> Please select an option</option>
+              {/* map out all the options for select field */}
               {graphdata.map((element) => {
                 return (
                   <option value={element.codename} key={uuidv4()}>
@@ -107,7 +112,7 @@ const MarketingPage = () => {
             <div className="marketing__revenue">
               <h2 className="marketing__subheading">Revenue</h2>
               <p className="marketing__paragraph">Total by month</p>
-              <RevenueBarChart  projectA={projectA} projectB={projectB}/>
+              <RevenueBarChart projectA={projectA} projectB={projectB} />
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
+//data set for hoem page sales bar chart.
 const data = [
   {
     name: 'Mar 13',
@@ -44,6 +45,7 @@ const data = [
 
 const GraphChart = () =>{
   return (
+    // responsive container changes the chart depending on the size of it's container
     <ResponsiveContainer width="99%" aspect={1.5}>
       <BarChart
         width={500}

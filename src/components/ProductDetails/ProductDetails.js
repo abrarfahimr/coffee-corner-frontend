@@ -11,6 +11,7 @@ import ProductModal from '../Modal/ProductModal';
 const API_URL = process.env.REACT_APP_API_URL;
 
 const ProductDetails = () => {
+  //set state for all product list
   const [product, setProduct] = useState([]);
 
   //setting state for modal 
@@ -18,12 +19,12 @@ const ProductDetails = () => {
   const showModal = () => {
     setOpenModal(prev => !prev);
   };
-
+  //set variable for useNavigate 
   const navigate = useNavigate();
-
+  //set variable for params
   let { id } = useParams();
 
-  //make get request with axios
+  //make get request with axios for product list
   let currentId = id;
   useEffect(() => {
     axios

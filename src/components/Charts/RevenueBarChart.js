@@ -10,13 +10,15 @@ import {
 } from 'recharts';
 import { ChartData } from './ChartData/ChartData';
 
-const RevenueBarChart = ({projectA, projectB}) => {
+const RevenueBarChart = ({ projectA, projectB }) => {
+  //grab the data that is the same as the select field and push them to an empty array to be parsed on the graph. This is so we dont parse all the data but the ones we want.
   let data = [];
   const graphdata = ChartData[0].revenue;
   const DataSetA = graphdata.find((graph) => graph.campaign === projectA);
   const DataSetB = graphdata.find((graph) => graph.campaign === projectB);
   data.push(DataSetA, DataSetB);
   return (
+    // responsive container changes the chart depending on the size of it's container
     <ResponsiveContainer width="99%" aspect={1}>
       <BarChart
         width={500}

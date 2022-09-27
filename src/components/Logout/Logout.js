@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logOut from "../../assets/icons/log-out.svg";
 
 const Logout = () => {
+  // component from auth0 package to logout and redirect the user to the login page.
   const { logout } = useAuth0();
   return (
     <div className="navbar__bottom">

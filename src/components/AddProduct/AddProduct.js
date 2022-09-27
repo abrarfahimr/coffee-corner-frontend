@@ -123,11 +123,6 @@ const AddProduct = () => {
     }
   };
 
-  // //handle change for upload
-  // const handleChangeUpload = (event) => {
-  //   setUpload(event.target.value);
-  // };
-
   //Checking to see if inputs are valid
   const isNameValid = () => {
     if (name.length < 1) {
@@ -192,13 +187,6 @@ const AddProduct = () => {
     }
     return true;
   };
-
-  // const isUploadValid = () => {
-  //   if (price === '') {
-  //     return false;
-  //   }
-  //   return true;
-  // };
 
   //check to see if all forms are valid
   const isFormValid = () => {
@@ -578,23 +566,7 @@ const AddProduct = () => {
                   This field is required
                 </p>
               </div>
-
-              {/* Upload */}
-              {/* <div className="addproduct__container">
-                <label htmlFor="productUpload" className="addproduct__label">
-                  Image
-                </label>
-                <input
-                  className={`addproduct__upload ${
-                    isUploadValid() ? '' : ' addproduct__upload--error'
-                  }`}
-                  name="productUpload"
-                  type="file"
-                  accept="image/png, image/jpeg"
-                  onChange={handleChangeUpload}
-                ></input>
-              </div> */}
-
+                {/* buttons */}
               <div className="addproduct__buttons">
                 <NavLink
                   to={`/products`}

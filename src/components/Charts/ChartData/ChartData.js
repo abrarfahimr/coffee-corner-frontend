@@ -1,3 +1,4 @@
+//Whole data for the marketing page. Data organized this way due to rechart's limitation on how it reads the data.
 export const ChartData = [
   {
     campaign: [

@@ -7,8 +7,10 @@ import TransactionList from '../../components/TransactionList/TransactionList';
 const API_URL = process.env.REACT_APP_API_URL;
 
 const TransactionPage = () => {
+  //set state for transactions list from axios call
   const [transactions, setTransaction] = useState([]);
 
+  //axios call to get data on transactions
   useEffect(() => {
     const url = `${API_URL}/transactions`;
     axios.get(url).then((response) => {

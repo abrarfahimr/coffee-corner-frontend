@@ -5,7 +5,7 @@ import productIcon from '../../assets/icons/tag.svg';
 import transactionIcon from '../../assets/icons/shopping-cart.svg';
 import customerIcon from '../../assets/icons/user.svg';
 
-
+//storing all nav bar details in a component to be mapped.
 export const NavBarData = [
   {
     title: 'Home',

@@ -14,6 +14,7 @@ const data = ChartData[0].lineData;
 
 const CampaignChart = ({ projectA, projectB }) => {
   return (
+    // responsive container changes the chart depending on the size of it's container
     <ResponsiveContainer width="99%" aspect={1}>
       <LineChart
         width={500}

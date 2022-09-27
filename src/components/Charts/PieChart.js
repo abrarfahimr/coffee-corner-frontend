@@ -9,6 +9,7 @@ const data = [
 
 const COLORS = ['#A0D4FF', '#BCE8E1', '#FFE7B8', '#FE9399'];
 
+// calculating the data into segments of a circle.
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
   cx,
@@ -37,11 +38,12 @@ const renderCustomizedLabel = ({
 };
 const PieChartGraph = () => {
   return (
+    // responsive container changes the chart depending on the size of it's container
     <ResponsiveContainer width="100%" aspect={1.25}>
       <PieChart width={400} height={400}>
         <Pie
           data={data}
-          cx= "50%"
+          cx="50%"
           cy="50%"
           labelLine={false}
           label={renderCustomizedLabel}

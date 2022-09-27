@@ -19,7 +19,8 @@
   }
 
   &__headingcontainer {
-    @include flex-center;
+    display: flex;
+    align-items: center;
     width: 100%;
     margin: 1.5rem 0 0 0;
   }
@@ -42,7 +43,8 @@
   &__formcontainer {
     @include tablet {
       width: 100%;
-      @include flex-spaced;
+      display: flex;
+      justify-content: space-between;
       margin: 2.4rem 0;
     }
 
@@ -213,7 +215,9 @@
   }
 
   &__buttons {
-    @include flex-start-center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     width: 60%;
     margin-bottom: 2rem;
 
@@ -260,3 +264,4 @@
     @include label-mobile;
   }
 }
+

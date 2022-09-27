@@ -8,9 +8,11 @@ import { Link } from 'react-router-dom';
 const API_URL = process.env.REACT_APP_API_URL;
 
 const ProductPage = () => {
+  //set state for axios call and search fucntionality
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("")
 
+  //Get request for array of product object
   useEffect(() => {
     const url = `${API_URL}/products`;
     axios.get(url)
@@ -19,6 +21,7 @@ const ProductPage = () => {
       })
   }, []);
 
+  //handle change in search field
   const handleSearch = (event) => {
     event.preventDefault();
     setSearch(event.target.value);
@@ -36,6 +39,7 @@ const ProductPage = () => {
               onChange={handleSearch}
             />
           </form>
+          {/* Link to the add product component */}
           <Link to={`/products/add`} className="products__addbutton">
             + Add Product
           </Link>
@@ -80,6 +84,7 @@ const ProductPage = () => {
           }
         return false;
       })
+        //map out the array of product objects
        .map((product) => {
         return <ProductList product={product} key={uuidv4()} />;
       })}

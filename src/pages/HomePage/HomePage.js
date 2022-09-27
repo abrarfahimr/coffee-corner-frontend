@@ -10,8 +10,10 @@ import { Link } from 'react-router-dom';
 const API_URL = process.env.REACT_APP_API_URL;
 
 const HomePage = () => {
+  //set state from product list
   const [products, setProduct] = useState([]);
 
+  //axios call to get array of products
   useEffect(() => {
     axios
       .get(`${API_URL}/products`)
@@ -53,11 +55,13 @@ const HomePage = () => {
         <div className="homepage__producttable">
           <div className="homepage__products">
             <h2 className="homepage__title">Top Products</h2>
+            {/* sort the list of products according to total amount for each product in descending order. Show only the top 6 highest and map then out*/}
             {
               products && products
                 .sort((a, b) => (a.price * a.sales) > (b.price * b.sales) ? -1 : 1)
                 .slice(0, 7)
                 .map((product) => {
+                  // link each product to their respective product detail component.
                   return (
                     <Link  to={`/products/${product.id}`} className="homepage__productlist" key={uuidv4()}>
                       <div className="homepage__coffee">

@@ -86,6 +86,7 @@ const data = [
 
 const UserChart = () => {
   return (
+    // responsive container changes the chart depending on the size of it's container
     <ResponsiveContainer width="99%" aspect={2}>
       <BarChart
         width={500}

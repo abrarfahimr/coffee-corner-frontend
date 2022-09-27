@@ -3,8 +3,10 @@ import { v4 as uuidv4 } from 'uuid';
 
 const TransactionList = ({transaction}) => {
 
+  //spliting customer names by - to get array of names to map later
   const allProducts = transaction.products.split("-");
 
+  //function used to change classname depending on the "status"
   const changeClassName = (status) => {
     if (transaction.status === 'Pending') {
       return 'transactions__statusbar--pending';
