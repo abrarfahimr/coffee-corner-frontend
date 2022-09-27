@@ -1,7 +1,6 @@
 import './Header.scss'
 import navIcon from '../../assets/icons/navicon.svg';
 import settingIcon from '../../assets/icons/setting.svg';
-import userImage from '../../assets/images/user.png';
 
 
 const Header = ({ sideBar, toggleSideBar, user }) => {
