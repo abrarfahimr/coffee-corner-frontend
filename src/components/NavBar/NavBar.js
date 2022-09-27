@@ -3,6 +3,7 @@ import './NavBar.scss';
 import {NavBarData} from './NavBarData';
 import { v4 as uuidv4 } from 'uuid';
 import logo from '../../assets/icons/logo.svg';
+import Logout from '../Logout/Logout';
 
 const NavBar = ({ sideBar }) => {
   return (
@@ -20,7 +21,7 @@ const NavBar = ({ sideBar }) => {
           </div>
         );
       })}
-      <div className="navbar__logout"></div>
+        <Logout/>
     </nav>
   );
 };

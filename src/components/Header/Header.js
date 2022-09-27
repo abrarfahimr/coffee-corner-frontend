@@ -4,7 +4,10 @@ import settingIcon from '../../assets/icons/setting.svg';
 import userImage from '../../assets/images/user.png';
 
 
-const Header = ({ sideBar, toggleSideBar }) => {
+const Header = ({ sideBar, toggleSideBar, user }) => {
+  const splitName = user.given_name.split(" ")
+  const firstName = splitName[0];
+
   return (
     <>
       <div className={sideBar ? 'backdrop--open' : 'backdrop'} onClick={toggleSideBar}></div>
@@ -15,9 +18,9 @@ const Header = ({ sideBar, toggleSideBar }) => {
           className="header__navicon"
           onClick={toggleSideBar}
         ></img>
-        <h2 className="header__title">Welcome Back</h2>
+        <h2 className="header__title">Welcome Back, {firstName}</h2>
         <div className="header__setting">
-          <img src={userImage} alt="user icon" className="header__user"></img>
+          <img src={user.picture} alt="user icon" className="header__user"></img>
           <img
             src={settingIcon}
             alt="setting icon"

@@ -54,6 +54,15 @@
     margin-right: 0.5rem;
     width: 1.25rem;
     height: 1.25rem;
+    color: $coffee-grey500;
+  }
+  &__bottom{
+    @extend .navbar__links;
+    position: absolute;
+    bottom: 0;
+  }
+  &__logout{
+    @extend .navbar__title;
   }
 }
 

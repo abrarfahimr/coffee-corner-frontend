@@ -36,8 +36,8 @@ const ClicksBarChart = ({ projectA, projectB }) => {
         <Tooltip />
         <Legend />
         <Bar dataKey="twitter" stackId="a" fill="#FE9399" />
-        <Bar dataKey="facebook" stackId="a" fill="#FFE7B8" />
-        <Bar dataKey="googleAds" stackId="a" fill="#BCE8E1" />
+        <Bar dataKey="facebook" stackId="a" fill="#ffc453" />
+        <Bar dataKey="googleAds" stackId="a" fill="#5dc7b7" />
       </BarChart>
     </ResponsiveContainer>
   );
