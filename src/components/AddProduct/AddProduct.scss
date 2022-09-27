@@ -19,8 +19,7 @@
   }
 
   &__headingcontainer {
-    display: flex;
-    align-items: center;
+    @include flex-center;
     width: 100%;
     margin: 1.5rem 0 0 0;
   }
@@ -43,8 +42,7 @@
   &__formcontainer {
     @include tablet {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
+      @include flex-spaced;
       margin: 2.4rem 0;
     }
 
@@ -215,9 +213,7 @@
   }
 
   &__buttons {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    @include flex-start-center;
     width: 60%;
     margin-bottom: 2rem;
 
@@ -263,14 +259,4 @@
   ::-webkit-input-placeholder {
     @include label-mobile;
   }
-}
-
-input[type="file"]::file-selector-button {
-  font-family: 'Poppins';
-  background-color: $coffee-blue;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 1.25rem;
-  color: $coffee-white;
-  margin-right: 0.5rem;
 }

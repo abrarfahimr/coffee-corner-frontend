@@ -9,10 +9,8 @@
   background-color: $coffee-darkblue;
   color: $coffee-white;
   padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  @include flex-column-center;
   @include tablet{
     padding: 0 2.5rem;
   }
@@ -20,10 +18,8 @@
     padding: 0 8.125rem;
   }
   &__top{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    @include flex-column-center;
   }
   &__icon{
     width: 5rem;

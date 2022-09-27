@@ -16,9 +16,7 @@
   &__top{
     width: 100%;
     @include tablet{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex-spaced-center;
       margin: 2rem 0 4rem 0;
     }
   }
@@ -71,9 +69,7 @@
     display: none;
     @include tablet{
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex-spaced-center;
       background-color: $coffee-grey300;
       padding: 0.5rem 1rem;
     }
@@ -86,9 +82,7 @@
   &__list{
     width: 100%;
     @include tablet{
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      @include flex-spaced-start;
       border-bottom: 1px solid $coffee-grey300;
       padding: 1.5rem 0;
     }
@@ -110,8 +104,7 @@
     margin: 0 0 0.5rem 0;
   }
   &__productname{
-    display: flex;
-    align-items: center;
+    @include flex-center;
     @include tablet{
       width: 100%
     }
@@ -140,9 +133,7 @@
   &__product, &__id, &__stock, &__price, &__sales{
     width: 50%;
     @include tablet{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex-column-aligncenter;
     }
   }
   &__product{
@@ -165,9 +156,7 @@
     width: 40%;
   }
   &__sales{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-column-aligncenter;
     @include tablet{
       width: 100%;
     }
@@ -189,8 +178,7 @@
     @extend .products__firstlist;
   }
   &__thirdlist{
-    display: flex;
-    justify-content: center;
+    @include flex-center;
     width: 100%;
     padding: 1rem;
     @include tablet {
@@ -200,8 +188,7 @@
     }
   }
   &__fourthlist{
-    display: flex;
-    justify-content: center;
+    @include flex-center;
     width: 100%;
     @include tablet{
       width: 15%;

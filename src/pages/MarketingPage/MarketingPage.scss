@@ -35,9 +35,7 @@
   }
 
   &__card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-column-center;
     width: fit-content;
     padding: 1.5rem;
     @include border;
@@ -102,8 +100,7 @@
   }
   &__dropdown{
     @include desktop{
-      display: flex;
-      justify-content: space-between;
+      @include flex-spaced;
     }
   }
   &__container {
@@ -148,8 +145,7 @@
   }
   &__graph{
     @include tablet{
-      display: flex;
-      justify-content: center;
+      @include flex-center;
       width: 100%;
     }
   }
@@ -164,14 +160,12 @@
   &__chartcontainer{
     @include desktop{
       width: 100%;
-      display: flex;
-      justify-content: center;
+      @include flex-center;
     }
   }
   &__barcharts{
     @include tablet{
-      display: flex;
-      justify-content: space-between;
+      @include flex-spaced;
       margin-top: 2.5rem;
     }
     @include desktop{

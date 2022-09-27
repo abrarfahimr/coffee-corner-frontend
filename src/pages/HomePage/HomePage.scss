@@ -26,8 +26,7 @@
   &__top{
     @include desktop{
       width: 100%;
-      display: flex;
-      justify-content: space-between;
+      @include flex-spaced;
     }
    
   }
@@ -129,8 +128,7 @@
     }
   }
   &__coffee{
-    display: flex;
-    align-items: center;
+    @include flex-center;
   }
   &__image{
     width: 2.5rem;
@@ -230,9 +228,8 @@
     }
   }
   &__entry{
-    display: flex;
     width: 100%;
-    justify-content: space-between;
+    @include flex-spaced;
     padding: 0 1rem;
     @include tablet{
       padding: 0;

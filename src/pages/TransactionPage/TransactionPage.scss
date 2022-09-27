@@ -150,9 +150,7 @@
     width: 50%;
 
     @include tablet {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      @include flex-column-start;
     }
   }
 
@@ -221,8 +219,7 @@
   }
 
   &__thirdlist {
-    display: flex;
-    justify-content: space-between;
+    @include flex-spaced;
     width: 100%;
     padding: 1rem;
 

@@ -45,8 +45,7 @@
   }
   &__bottom{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    @include flex-spaced;
     @include tablet{
       justify-content: flex-start;
     }
