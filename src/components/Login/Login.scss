@@ -1,0 +1,63 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.login{
+  width: 100vw;
+  height: 100vh;
+  background-color: $coffee-darkblue;
+  color: $coffee-white;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include tablet{
+    padding: 0 2.5rem;
+  }
+  @include desktop{
+    padding: 0 8.125rem;
+  }
+  &__top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon{
+    width: 5rem;
+    height: 5rem;
+  }
+  &__heading{
+    @include page-header-mobile;
+    margin: 1.5rem 0 1rem 0;
+  }
+  &__paragraph{
+    @include body-mobile;
+    text-align: center;
+    margin: 0 0 3rem 0;
+  }
+  &__para{
+    @include body-mobile;
+    margin: 0 0 1.5rem 0;
+  }
+  &__button{
+    @include buttonStyle;
+    width: 50%;
+    background-color: $coffee-blue;
+    color: $coffee-white;
+    border-radius: 1.25rem;
+    @include label-mobile;
+    @include tablet{
+      width: 30%;
+    }
+    @include desktop{
+      width: 15%;
+    }
+    &:hover{
+      transition-duration: 0.2s;
+      background-color: $coffee-grey900;
+    }
+  }
+}

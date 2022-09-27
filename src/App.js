@@ -13,37 +13,52 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import AddProduct from './components/AddProduct/AddProduct';
 import EditProduct from './components/EditProduct/EditProduct';
 import NavBar from './components/NavBar/NavBar';
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from './components/Login/Login';
+
 
 function App() {
-    const [sideBar, setSideBar] = useState(false);
+  const [sideBar, setSideBar] = useState(false);
 
-    const toggleSideBar = () => {
-      setSideBar((prevState) => !prevState);
-    };
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Header
-          toggleSideBar={toggleSideBar}
-          sideBar={sideBar}
-        />
-        <NavBar sideBar={sideBar}/>
-        <Routes>
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/" element={<Navigate to="/home"/>} />
-          <Route path="/sales" element={<SalesPage />} />
-          <Route path="/products" element={<ProductPage />} />
-          <Route path="/products/:id" element={<ProductDetails/>}/>
-          <Route path='/products/:id/edit' element={<EditProduct />} />
-          <Route path='/products/add' element={<AddProduct />} />
-          <Route path='/marketing' element={<MarketingPage/>}/>
-          <Route path="/transaction" element={<TransactionPage />} />
-          <Route path="/customer" element={<CustomerPage/> }/>
-          <Route path='*' element={<ErrorPage/> } />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+  const toggleSideBar = () => {
+    setSideBar((prevState) => !prevState);
+  };
+
+  const { isLoading, isAuthenticated, error, user, logout } =
+    useAuth0();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Oops... {error.message}</div>;
+  }
+
+  if (isAuthenticated) {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Header toggleSideBar={toggleSideBar} sideBar={sideBar} user={user} />
+          <NavBar sideBar={sideBar} logout={logout} />
+          <Routes>
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/sales" element={<SalesPage />} />
+            <Route path="/products" element={<ProductPage />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+            <Route path="/products/:id/edit" element={<EditProduct />} />
+            <Route path="/products/add" element={<AddProduct />} />
+            <Route path="/marketing" element={<MarketingPage />} />
+            <Route path="/transaction" element={<TransactionPage />} />
+            <Route path="/customer" element={<CustomerPage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
+  } else {
+    return <LoginButton/>;
+  }
 }
 
 export default App;
