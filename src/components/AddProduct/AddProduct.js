@@ -5,6 +5,7 @@ import axios from 'axios';
 import arrowLeftIcon from '../../assets/icons/arrow-left.svg';
 import errorIcon from '../../assets/icons/x-circle.svg';
 
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 const AddProduct = () => {
