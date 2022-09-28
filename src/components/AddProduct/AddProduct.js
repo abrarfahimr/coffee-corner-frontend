@@ -223,7 +223,7 @@ const AddProduct = () => {
           stock: stock,
           sales: '0',
           price: price,
-          image: `http://localhost:8080/image11.png`
+          image: `https://coffee-corner-backend.herokuapp.com/image11.png`,
         })
         .then((response) => console.log(response.data))
         .catch((err) => console.log(err.response.data));
