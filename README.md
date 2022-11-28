@@ -1,7 +1,7 @@
 # Project Title
 Coffee Corner Backend
 
-Checkout the website here: https://coffee-corner-dashboard.herokuapp.com/
+Checkout the video about the site here: https://www.loom.com/share/a7637f39f06b477eb05f58ddd5fb5f73
 
 Note: The website might take time to load because of heroku.
 
